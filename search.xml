@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[初探Vue+axios]]></title>
+    <url>%2F2019%2F03%2F22%2FVueAndAxios%2F</url>
+    <content type="text"><![CDATA[因为不太懂前端所以一开始只了解div+css,后来慢慢听别人提起Vue、Angular、React,才开始了解前端框架，首次体验Vue发现相较于div+css有了明显的便利感操作十分简单,为Vue打call总结一下体验感(^_^) Vue优点 将原来的直接操作dom的思想转变为操作数据,十分方便 操作简单,通过组合、拼凑快速完成页面渲染 axiosaxios的好处就不列举了 太多了(๑•̀ㅂ•́)و✧ 相比ajax,axios则更适合前端mvvm思想,它还能自动转换json数据 这更加适应了前后端分离的开发方式 结尾首次体验Vue的感觉就是这样了 虽然这只是沧海一粟但是只要努力一定能发现更多 给自己加个油(￣▽￣)～■干杯□～(￣▽￣)]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[SpringBoot使用JavaMail发送SMTP遇到的坑]]></title>
     <url>%2F2019%2F03%2F21%2FJavaMail%2F</url>
     <content type="text"><![CDATA[添加maven依赖&lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-mail&lt;/artifactId&gt; &lt;/dependency&gt; 添加properties配置#email 配置 spring.mail.host=smtp.xxx.com spring.mail.username=xxxxxxx@163.com //此处password是校验码不是邮箱密码可自行百度 spring.mail.password=xxxxxxxx spring.mail.properties.mail.smtp.starttls.enable=true spring.mail.properties.mail.smtp.port=25 //端口号 spring.mail.default-encoding=UTF-8 添加测试方法@Autowired JavaMailSender mailSender; //自动注入邮件配置 @Value(&quot;${spring.mail.username}&quot;) private String Sender; //读取配置文件中的参数 public String sendSimpleMail(){ SimpleMailMessage message = new SimpleMailMessage(); message.setFrom(Sender); //邮件发送人 //需要多人接收使用list 集合 不需要可以直接使用message的几个方法 List&lt;String&gt; list = new ArrayList&lt;String&gt;(); list.add(&quot;xxxx@xxx.com&quot;); list.add(&quot;xxx@xxx.com&quot;); for (int i = 0; i &lt; list.size(); i++) { String obj=(String)list.get(i); message.setTo(obj); message.setSubject(&quot;订单&quot;); //邮件主题 message.setText(pd.getString(&quot;message&quot;)+pd.get(&quot;uid&quot;)); //邮件内容 mailSender.send(message); } return &quot;OK&quot;; } 注意事项邮箱开放25/465端口(基本,有些开放其他端口)发送邮件 message.setTo //接收人 message.setCc //抄送人 ... 阿里ecs默认封25端口 可以使用ssl 传输 ssl加密发送邮件修改properties配置 //spring.mail.properties.mail.smtp.port=25 spring.mail.properties.mail.smtp.port=465 添加properties配置: #SSL证书Socket工厂 spring.mail.properties.mail.smtp.socketFactory.class=javax.net.ssl.SSLSocketFactory 使用465 服务器成功发送(^_^)]]></content>
