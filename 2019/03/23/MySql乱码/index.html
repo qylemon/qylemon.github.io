@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="之前偶然发现后台处理带有特殊符号的字符串无法存入数据库,并且程序报错Incorrect string value: &amp;#39;\xF0\x9F\xA4\x97 3...&amp;#39; for column &amp;#39;nick_name&amp;#39; at row 1  乱码原因分析emoji表情符采用Unicode 6标准 一个emoji存储需要占用4个byte字节存储,而mysql采用utf-8编码时采">
+<meta name="description" content="之前偶然发现后台处理带有特殊符号的字符串无法存入数据库,并且程序报错Incorrect string value: &amp;#39;\xF0\x9F\xA4\x97 3...&amp;#39; for column &amp;#39;nick_name&amp;#39; at row 1">
 <meta name="keywords" content="LemonQi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决MySql存入特殊符号乱码问题">
 <meta property="og:url" content="http://yoursite.com/2019/03/23/MySql乱码/index.html">
 <meta property="og:site_name" content="LemonQi">
-<meta property="og:description" content="之前偶然发现后台处理带有特殊符号的字符串无法存入数据库,并且程序报错Incorrect string value: &amp;#39;\xF0\x9F\xA4\x97 3...&amp;#39; for column &amp;#39;nick_name&amp;#39; at row 1  乱码原因分析emoji表情符采用Unicode 6标准 一个emoji存储需要占用4个byte字节存储,而mysql采用utf-8编码时采">
+<meta property="og:description" content="之前偶然发现后台处理带有特殊符号的字符串无法存入数据库,并且程序报错Incorrect string value: &amp;#39;\xF0\x9F\xA4\x97 3...&amp;#39; for column &amp;#39;nick_name&amp;#39; at row 1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-23T15:15:57.308Z">
+<meta property="og:updated_time" content="2019-03-24T06:14:49.443Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决MySql存入特殊符号乱码问题">
-<meta name="twitter:description" content="之前偶然发现后台处理带有特殊符号的字符串无法存入数据库,并且程序报错Incorrect string value: &amp;#39;\xF0\x9F\xA4\x97 3...&amp;#39; for column &amp;#39;nick_name&amp;#39; at row 1  乱码原因分析emoji表情符采用Unicode 6标准 一个emoji存储需要占用4个byte字节存储,而mysql采用utf-8编码时采">
+<meta name="twitter:description" content="之前偶然发现后台处理带有特殊符号的字符串无法存入数据库,并且程序报错Incorrect string value: &amp;#39;\xF0\x9F\xA4\x97 3...&amp;#39; for column &amp;#39;nick_name&amp;#39; at row 1">
 
 
 
@@ -347,6 +347,7 @@
 
       
         <p>之前偶然发现后台处理带有特殊符号的字符串无法存入数据库,并且程序报错<br><code>Incorrect string value: &#39;\xF0\x9F\xA4\x97 3...&#39; for column &#39;nick_name&#39; at row 1</code></p>
+<a id="more"></a>
 <hr>
 <h2 id="乱码原因分析"><a href="#乱码原因分析" class="headerlink" title="乱码原因分析"></a>乱码原因分析</h2><p>emoji表情符采用Unicode 6标准 一个emoji存储需要占用4个byte字节存储,而mysql采用utf-8编码时采用3个byte字节存储一个字符,所以导致无法存入</p>
 <hr>
