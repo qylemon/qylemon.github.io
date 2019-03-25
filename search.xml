@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[mongoDB初体验]]></title>
+    <url>%2F2019%2F03%2F24%2FMongoDB%E5%88%9D%E4%BD%93%E9%AA%8C%2F</url>
+    <content type="text"><![CDATA[mongodb是非关系型数据库的一种… 还是看百度吧 →百度百科,在首次使用中安装和运行上出现了些小问题,记录一下以便下一次查阅 mongo与关系型数据库的区别相较于关系型各有优缺点 安装MongoDB安装过程非常easy 不要对坑跳就ok,安装时记得取消掉下图的√ 启动MongoDB服务首先要去了解MongoDB的基础语法…百度吧…这里我参考了网上的教程步骤如下： 创建一个文件夹存放MongoDB的脚本（mkdir db） 在MongoDB的bin目录里启动cmd,然后执行命令F:\MongoDB\Server\4.0\bin&gt;mongod --dbpath=F:\db然后就能启动服务了(^_^),MongoDB启动后将占用端口27017,如下图可视化工具由于命令比较麻烦,这里我选用了GUI工具,选择了RoboMongo官网链接,操作非常easy,简单操作可以参考这篇教程RoboMongo简单操作介绍 endMongoDB的连接有可能会出现断连的情况,不过应该极少,这点需要注意一下︿(￣︶￣)︿]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[解决MySql存入特殊符号乱码问题]]></title>
     <url>%2F2019%2F03%2F23%2FMySql%E4%B9%B1%E7%A0%81%2F</url>
     <content type="text"><![CDATA[之前偶然发现后台处理带有特殊符号的字符串无法存入数据库,并且程序报错Incorrect string value: &#39;\xF0\x9F\xA4\x97 3...&#39; for column &#39;nick_name&#39; at row 1 乱码原因分析emoji表情符采用Unicode 6标准 一个emoji存储需要占用4个byte字节存储,而mysql采用utf-8编码时采用3个byte字节存储一个字符,所以导致无法存入 了解了原因之后就可以着手解决了,这个问题可以着手从两方面解决 修改数据库编码 修改代码 修改数据库编码修改数据库编码比较简单,可以将utf-8修改为utf8mb4 然后重启数据库再次存储就不会报错了 但是数据库内emoji显示为乱码无法查看 修改代码 过滤特殊字符后存入,弊端:内容不齐全如果全是emoji将会显示为空nickname.replaceAll(&quot;[\ue000-\uefff]&quot;,&quot;&quot;); 对含有特殊字符的字符串进行加解密处理,弊端:数据库内看到的内容为编码字符,显示时需要解码 `String nickname = “LemonQi”; if(nickname != null){String a =Base64.encodeBase64String(nickname.getBytes(&quot;UTF-8&quot;));//进行编码 String a = new String(Base64.decodeBase64(nickname), &quot;UTF-8&quot;);//进行解码 }`end每修改的方式都有一定的弊端,需要就业务逻辑来进行使用,就编码解码而言相对谨慎能够保持其完整性,以上就是个人使用感觉的记录了(^_^)]]></content>
