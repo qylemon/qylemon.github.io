@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[docker入门]]></title>
+    <url>%2F2019%2F03%2F28%2Fdocker%E5%85%A5%E9%97%A8%2F</url>
+    <content type="text"><![CDATA[简介docker容器采用c/s架构,使用镜像来创建容器,使用远程api来管理容器&gt;&gt;&gt;docker简介 应用场景某个系统的技术栈非常广就会需要依赖于各种开源库和中间件,如果需要多次部署,那么版本控制、依赖管理就会相对复杂,docker只需要根据应用程序的部署步骤编写一份Dockerfile文件(将安装、配置等操作交由Docker自动化处理),然后构建并发布他的镜像,这样,不管在什么机器上都只需要拉取需要的镜像,然后就可以直接部署运行 生命周期docker分为三部分,理解其作用也就了解了生命周期,docker分为镜像、容器、仓库 镜像是Docker生命周期中的构建或打包阶段，容器则是启动或执行阶段 安装mac和Linux可以流畅安装,windows需要看版本,专业版流畅,家庭版需要执行命令开启Hyper-V和修改注册表,参考→windows家庭版安装docker 基础命令docker 查看所有命令 docker images 列出本地镜像 docker pull 从镜像仓库中拉取或者更新指定镜像 docker ps 列出正在运行的容器... 实现docker run hello-world 能够看到控制台打印hello world就成功了 end docker在后期使用过程中拉去镜像极慢,可以在docker-&gt;setting中采用国内镜像加速 https://registry.docker-cn.com 中文镜像加速网址 dockerfile适合安装多个镜像自动化时使用,单个推荐直接安装]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[mongoDB初体验]]></title>
     <url>%2F2019%2F03%2F24%2FMongoDB%E5%88%9D%E4%BD%93%E9%AA%8C%2F</url>
     <content type="text"><![CDATA[mongodb是非关系型数据库的一种… 还是看百度吧 →百度百科,在首次使用中安装和运行上出现了些小问题,记录一下以便下一次查阅 mongo与关系型数据库的区别相较于关系型各有优缺点 安装MongoDB安装过程非常easy 不要对坑跳就ok,安装时记得取消掉下图的√ 启动MongoDB服务首先要去了解MongoDB的基础语法…百度吧…这里我参考了网上的教程步骤如下： 创建一个文件夹存放MongoDB的脚本（mkdir db） 在MongoDB的bin目录里启动cmd,然后执行命令F:\MongoDB\Server\4.0\bin&gt;mongod --dbpath=F:\db然后就能启动服务了(^_^),MongoDB启动后将占用端口27017,如下图可视化工具由于命令比较麻烦,这里我选用了GUI工具,选择了RoboMongo官网链接,操作非常easy,简单操作可以参考这篇教程RoboMongo简单操作介绍 endMongoDB的连接有可能会出现断连的情况,不过应该极少,这点需要注意一下︿(￣︶￣)︿]]></content>
@@ -28,6 +33,6 @@
   <entry>
     <title><![CDATA[The first day of blogging]]></title>
     <url>%2F2019%2F03%2F21%2Ffirst%2F</url>
-    <content type="text"><![CDATA[这是这个blog存在的第一天记录一下接下来按照自己的步骤陆续跑起来吧(^_^)po一张风景图记录下这一刻 Hello world！！！]]></content>
+    <content type="text"><![CDATA[这是这个blog存在的第一天记录一下接下来将会记录踩坑、学习等过程(^_^)po一张风景图记录下这一刻 Hello world！！！]]></content>
   </entry>
 </search>

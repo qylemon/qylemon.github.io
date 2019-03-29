@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="之前偶然发现后台处理带有特殊符号的字符串无法存入数据库,并且程序报错Incorrect string value: &amp;#39;\xF0\x9F\xA4\x97 3...&amp;#39; for column &amp;#39;nick_name&amp;#39; at row 1">
+<meta name="description" content="简介docker容器采用c/s架构,使用镜像来创建容器,使用远程api来管理容器&amp;gt;&amp;gt;&amp;gt;docker简介">
 <meta name="keywords" content="LemonQi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决MySql存入特殊符号乱码问题">
-<meta property="og:url" content="http://yoursite.com/2019/03/23/MySql乱码/index.html">
+<meta property="og:title" content="docker入门">
+<meta property="og:url" content="http://yoursite.com/2019/03/28/docker入门/index.html">
 <meta property="og:site_name" content="LemonQi">
-<meta property="og:description" content="之前偶然发现后台处理带有特殊符号的字符串无法存入数据库,并且程序报错Incorrect string value: &amp;#39;\xF0\x9F\xA4\x97 3...&amp;#39; for column &amp;#39;nick_name&amp;#39; at row 1">
+<meta property="og:description" content="简介docker容器采用c/s架构,使用镜像来创建容器,使用远程api来管理容器&amp;gt;&amp;gt;&amp;gt;docker简介">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-24T06:14:49.443Z">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/2/9/16178336d76fb404?imageslim">
+<meta property="og:updated_time" content="2019-03-29T05:07:34.102Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解决MySql存入特殊符号乱码问题">
-<meta name="twitter:description" content="之前偶然发现后台处理带有特殊符号的字符串无法存入数据库,并且程序报错Incorrect string value: &amp;#39;\xF0\x9F\xA4\x97 3...&amp;#39; for column &amp;#39;nick_name&amp;#39; at row 1">
+<meta name="twitter:title" content="docker入门">
+<meta name="twitter:description" content="简介docker容器采用c/s架构,使用镜像来创建容器,使用远程api来管理容器&amp;gt;&amp;gt;&amp;gt;docker简介">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/2/9/16178336d76fb404?imageslim">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/23/MySql乱码/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/28/docker入门/">
 
 
 
 
 
-  <title>解决MySql存入特殊符号乱码问题 | LemonQi</title>
+  <title>docker入门 | LemonQi</title>
   
 
 
@@ -270,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/23/MySql乱码/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/docker入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LemonQi">
@@ -287,7 +289,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">解决MySql存入特殊符号乱码问题</h1>
+          <h1 class="post-title" itemprop="name headline">docker入门</h1>
         
 
         <div class="post-meta">
@@ -299,8 +301,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-23T22:11:36+08:00">
-                2019-03-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-28T14:49:03+08:00">
+                2019-03-28
               </time>
             
 
@@ -318,8 +320,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/03/23/MySql乱码/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/23/MySql乱码/" itemprop="commentCount"></span>
+                <a href="/2019/03/28/docker入门/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/28/docker入门/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -347,23 +349,29 @@
       
 
       
-        <p>之前偶然发现后台处理带有特殊符号的字符串无法存入数据库,并且程序报错<br><code>Incorrect string value: &#39;\xF0\x9F\xA4\x97 3...&#39; for column &#39;nick_name&#39; at row 1</code></p>
-<a id="more"></a>
-<hr>
-<h2 id="乱码原因分析"><a href="#乱码原因分析" class="headerlink" title="乱码原因分析"></a>乱码原因分析</h2><p>emoji表情符采用Unicode 6标准 一个emoji存储需要占用4个byte字节存储,而mysql采用utf-8编码时采用3个byte字节存储一个字符,所以导致无法存入</p>
-<hr>
-<p>了解了原因之后就可以着手解决了,这个问题可以着手从两方面解决<br></p>
-<ol>
-<li>修改数据库编码<br></li>
-<li>修改代码 </li>
-</ol>
-<h2 id="修改数据库编码"><a href="#修改数据库编码" class="headerlink" title="修改数据库编码"></a>修改数据库编码</h2><p>修改数据库编码比较简单,可以将utf-8修改为utf8mb4 然后重启数据库再次存储就不会报错了 但是数据库内emoji显示为乱码无法查看</p>
-<h2 id="修改代码"><a href="#修改代码" class="headerlink" title="修改代码"></a>修改代码</h2><ol>
-<li>过滤特殊字符后存入,弊端:内容不齐全如果全是emoji将会显示为空<br><br><code>nickname.replaceAll(&quot;[\ue000-\uefff]&quot;,&quot;&quot;);</code></li>
-<li>对含有特殊字符的字符串进行加解密处理,弊端:数据库内看到的内容为编码字符,显示时需要解码<br><br> `String nickname = “LemonQi”;<br> if(nickname != null){<pre><code>String a =Base64.encodeBase64String(nickname.getBytes(&quot;UTF-8&quot;));//进行编码
-String a = new String(Base64.decodeBase64(nickname), &quot;UTF-8&quot;);//进行解码
-</code></pre> }`<h2 id="end"><a href="#end" class="headerlink" title="end"></a>end</h2>每修改的方式都有一定的弊端,需要就业务逻辑来进行使用,就编码解码而言相对谨慎能够保持其完整性,以上就是个人使用感觉的记录了(<em>^_^</em>)</li>
-</ol>
+        <p><img src="https://user-gold-cdn.xitu.io/2018/2/9/16178336d76fb404?imageslim" alt></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>docker容器采用c/s架构,使用镜像来创建容器,使用远程api来管理容器<br>&gt;&gt;&gt;<a href="https://baike.baidu.com/item/Docker/13344470?fr=aladdin#1" target="_blank" rel="noopener">docker简介</a><br><a id="more"></a></p>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>某个系统的技术栈非常广就会需要依赖于各种开源库和中间件,如果需要多次部署,那么版本控制、依赖管理就会相对复杂,docker只需要根据应用程序的部署步骤编写一份Dockerfile文件(将安装、配置等操作交由Docker自动化处理),然后构建并发布他的镜像,这样,不管在什么机器上都只需要拉取需要的镜像,然后就可以直接部署运行</p>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p>docker分为三部分,理解其作用也就了解了生命周期,docker分为镜像、容器、仓库</p>
+<blockquote>
+<p>镜像是Docker生命周期中的构建或打包阶段，容器则是启动或执行阶段</p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>mac和Linux可以流畅安装,windows需要看版本,专业版流畅,家庭版需要执行命令开启Hyper-V和修改注册表,参考→<a href="https://www.jianshu.com/p/1329954aa329/" target="_blank" rel="noopener">windows家庭版安装docker</a></p>
+<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><pre><code>docker 查看所有命令
+docker images 列出本地镜像
+docker pull 从镜像仓库中拉取或者更新指定镜像
+docker ps 列出正在运行的容器...
+</code></pre><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><pre><code>docker run hello-world 
+</code></pre><p>能够看到控制台打印hello world就成功了</p>
+<h2 id="end"><a href="#end" class="headerlink" title="end"></a>end</h2><ul>
+<li><p>docker在后期使用过程中拉去镜像极慢,可以在docker-&gt;setting中采用国内镜像加速</p>
+<blockquote>
+<p><a href="https://registry.docker-cn.com" target="_blank" rel="noopener">https://registry.docker-cn.com</a> 中文镜像加速网址</p>
+</blockquote>
+</li>
+<li><p>dockerfile适合安装多个镜像自动化时使用,单个推荐直接安装</p>
+</li>
+</ul>
 
       
     </div>
@@ -398,8 +406,8 @@ String a = new String(Base64.decodeBase64(nickname), &quot;UTF-8&quot;);//进行
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/22/VueAndAxios/" rel="next" title="初探Vue+axios">
-                <i class="fa fa-chevron-left"></i> 初探Vue+axios
+              <a href="/2019/03/24/MongoDB初体验/" rel="next" title="mongoDB初体验">
+                <i class="fa fa-chevron-left"></i> mongoDB初体验
               </a>
             
           </div>
@@ -407,10 +415,6 @@ String a = new String(Base64.decodeBase64(nickname), &quot;UTF-8&quot;);//进行
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/24/MongoDB初体验/" rel="prev" title="mongoDB初体验">
-                mongoDB初体验 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -583,7 +587,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#乱码原因分析"><span class="nav-number">1.</span> <span class="nav-text">乱码原因分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改数据库编码"><span class="nav-number">2.</span> <span class="nav-text">修改数据库编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改代码"><span class="nav-number">3.</span> <span class="nav-text">修改代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#end"><span class="nav-number">4.</span> <span class="nav-text">end</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用场景"><span class="nav-number">2.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期"><span class="nav-number">3.</span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">4.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础命令"><span class="nav-number">5.</span> <span class="nav-text">基础命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">6.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#end"><span class="nav-number">7.</span> <span class="nav-text">end</span></a></li></ol></div>
             
 
           </div>
