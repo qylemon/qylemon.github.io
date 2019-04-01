@@ -347,54 +347,18 @@
 
       
         
-          
-            <p><img src="https://img1.mukewang.com/5b8757e2000197b605000389.jpg" alt></p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Dubbo 是阿里巴巴开源项目的一个分布式服务框架。其致力于提供高性能和透明化的 RPC 远程调用方案，以及 SOA 服务治理方案。</p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>由图可见dubbo主要由服务提供者、注册中心、服务消费者、监控中心和容器组成</p>
-<table>
-<thead>
-<tr>
-<th>节点</th>
-<th>角色说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Container</td>
-<td>服务运行容器</td>
-</tr>
-<tr>
-<td>Provider</td>
-<td>暴露服务的服务提供者</td>
-</tr>
-<tr>
-<td>Consumer</td>
-<td>调用远程服务的服务消费者</td>
-</tr>
-<tr>
-<td>Registry</td>
-<td>服务注册与发现的注册中心</td>
-</tr>
-<tr>
-<td>Monitor</td>
-<td>统计服务的调用此处和调用时间的监控中心</td>
-</tr>
-</tbody>
-</table>
-<p>过程如上图所示<br></p>
-<ol>
-<li>服务运行容器启动、加载运行服务提供者<br></li>
-<li>服务提供者启动时将服务提供给注册中心<br></li>
-<li>服务消费者启动时向注册中心订阅需要的服务<br></li>
-<li>注册中心返回服务提供者信息列表给消费者<br></li>
-<li>服务消费者从列表中,基于软负载均衡选一台服务提供者进行调用，如果调用失败再选另一台<br></li>
-<li>服务消费者和服务提供者在内存中累计调用次数和调用时间，定时每分钟发送一次统计数据到监控中心<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2>在网上找了很久demo多数写的不够全面,找了很久才找到了一个较为详细的,项目是maven聚合项目,通过api、服务提供者、服务消费者三个model构成,注册中心使用zookeeper→<a href="https://github.com/qylemon/dubbo-demo" target="_blank" rel="noopener">dubbo-demo</a></li>
-</ol>
-
-          
+          <p><img src="https://img1.mukewang.com/5b8757e2000197b605000389.jpg" alt></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Dubbo 是阿里巴巴开源项目的一个分布式服务框架。其致力于提供高性能和透明化的 RPC 远程调用方案，以及 SOA 服务治理方案。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/01/Dubbo入门/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
