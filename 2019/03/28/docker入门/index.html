@@ -88,7 +88,7 @@
 <meta property="og:description" content="简介docker容器采用c/s架构,使用镜像来创建容器,使用远程api来管理容器&amp;gt;&amp;gt;&amp;gt;docker简介">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/2/9/16178336d76fb404?imageslim">
-<meta property="og:updated_time" content="2019-03-29T05:07:34.102Z">
+<meta property="og:updated_time" content="2019-04-03T02:00:33.749Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker入门">
 <meta name="twitter:description" content="简介docker容器采用c/s架构,使用镜像来创建容器,使用远程api来管理容器&amp;gt;&amp;gt;&amp;gt;docker简介">
@@ -370,8 +370,41 @@ docker ps 列出正在运行的容器...
 </blockquote>
 </li>
 <li><p>dockerfile适合安装多个镜像自动化时使用,单个推荐直接安装</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><h3 id="dockerfile"><a href="#dockerfile" class="headerlink" title="dockerfile"></a>dockerfile</h3><p>创建dockerfil文件</p>
+<blockquote>
+<p>type nul&gt;DockerfileName</p>
+</blockquote>
 </li>
 </ul>
+<p>dockerfile内容如下</p>
+<pre><code>#基于 node 镜像
+FROM node
+#指定维护者信息
+MAINTAINER xx xxx@xx.com
+#指定下一条命令的运行目录
+WORKDIR /usr/local
+#新建路径
+RUN mkdir work
+#在 /usr/local 的基础上指定运行目录，所以当前目录为：/usr/local/work
+WORKDIR work
+#安装必要的组件
+RUN npm install express
+RUN npm install express-generator -g
+RUN npm install supervisor -g
+RUN express myapp -e
+#将当前目录下的文件，复制到 /usr/local/work/ 下
+#COPY . /usr/local/work/
+WORKDIR /usr/local/work/myapp
+RUN npm install
+WORKDIR /usr/local/work/myapp
+#启动 express 应用
+CMD supervisor ./bin/www
+#暴露容器 3000 端口
+EXPOSE 3000
+</code></pre><blockquote>
+<p>docker build -t imagename . （在dockerfile所在目录运行创建镜像 .号是指定 dockerfile 在当前目录中）<br><br>docker run -p 4000:3000 imagename (映射到宿主机)</p>
+</blockquote>
+<p>*dockerfile取于<a href="https://www.jianshu.com/p/0bbbd5c7d020" target="_blank" rel="noopener">使用 Dockerfile 自定义 Docker 镜像</a></p>
 
       
     </div>
@@ -591,7 +624,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用场景"><span class="nav-number">2.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期"><span class="nav-number">3.</span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">4.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础命令"><span class="nav-number">5.</span> <span class="nav-text">基础命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">6.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#end"><span class="nav-number">7.</span> <span class="nav-text">end</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用场景"><span class="nav-number">2.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期"><span class="nav-number">3.</span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">4.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础命令"><span class="nav-number">5.</span> <span class="nav-text">基础命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">6.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#end"><span class="nav-number">7.</span> <span class="nav-text">end</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">8.</span> <span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dockerfile"><span class="nav-number">8.1.</span> <span class="nav-text">dockerfile</span></a></li></ol></li></ol></div>
             
 
           </div>
