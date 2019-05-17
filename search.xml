@@ -44,5 +44,8 @@
     <title><![CDATA[The first day of blogging]]></title>
     <url>%2F2019%2F03%2F21%2Ffirst%2F</url>
     <content type="text"><![CDATA[这是这个blog存在的第一天记录一下接下来将会记录踩坑、学习等过程(^_^)po一张风景图记录下这一刻 Hello world！！！]]></content>
+      <categories>
+        <category>first</category>
+      </categories>
   </entry>
 </search>
