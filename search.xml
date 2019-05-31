@@ -5,7 +5,7 @@
     <url>%2F2019%2F05%2F31%2Fflutter%E8%BF%9B%E9%98%B6%2F</url>
     <content type="text"><![CDATA[终于学完了Flutter的基础组件，并且实例了一把，感觉光玩组件就很有趣，期待接下来去学习与后台对接成为灵活的App,那么在实践过程中..又踩坑了，记录一下 ##关于报错在学习的过程中出现了这样一个报错 RangeError (index): Invalid value: Valid value range is empty: 0 怎么可能是我出错呢(小声哔哔)，查阅百度这个错误触发的原因是因为构建失败，之后在终端运行 flutter clean 在重新跑项目 成功解决 ##关于打包写完以后想要看看真机是啥效果，于是乎就需要打包，但是在打包之前需要修改几处代码才能够打包成功1.需要有key.jks密钥 AndroidStudio的bin目录位置\keytool -genkey -v -keystore 存放密钥的位置\key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key 之后需要填key、pwd等一系列内容然后就能够生成 2.需要在项目中将密钥添入供项目读取先创建/android/key.properties 存放key的相关信息 storePassword=&lt;创建keystore时的storePassword&gt;keyPassword=&lt;创建keystore时的keyPassword&gt;keyAlias=keystoreFile=&lt;密钥库文件的位置 , 例如: /Users//key.jks&gt; 然后/android/app/build.gradle 找到 android { 在这行之前添加如下代码 def keystorePropertiesFile = rootProject.file(“key.properties”)def keystoreProperties = new Properties()keystoreProperties.load(new FileInputStream(keystorePropertiesFile)) 然后把buildType{}替换一段代码 signingConfigs { release { keyAlias keystoreProperties[‘keyAlias’] keyPassword keystoreProperties[‘keyPassword’] storeFile file(keystoreProperties[‘storeFile’]) storePassword keystoreProperties[‘storePassword’] } } buildTypes { release { signingConfig signingConfigs.release } } 这样就配置完成了，然后运行 flutter build run 就可以正常打包了 ##endstoreFile的路径要填写绝对路径，生成的密钥不要共享和泄露打包完的apk文件在 /build/app/outputs/apk/app-release.apk]]></content>
       <categories>
-        <category>-[flutter] -[small case]</category>
+        <category>-flutter -small case</category>
       </categories>
   </entry>
   <entry>
@@ -13,7 +13,7 @@
     <url>%2F2019%2F05%2F09%2Fflutter%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[简介Flutter是谷歌的移动UI框架，可以快速在iOS和Android上构建高质量的原生用户界面。Flutter百度百科 安装 工欲善其事，必先利其器 &nbsp;安装必不可少，坑也不能少 想要正常使用flutter,需要经历以下几个步骤 Flutter SDK &nbsp;下载地址 flutter配置path需要指向到flutter文件夹的bin目录 2.Android SDK+开发工具 Android Studio下载地址使用vs code、idea开发可以直接安装sdk(已安装过的 需要配置环境变量供flutter检测)3.配置环境变量+ide绑定环境路径(下图为sdk位置配置)(ide就不记录了,都是setting&gt;&gt;&gt;plugins先down下来 然后配置)正常到这里就结束了,然后重启,在命令行中输入 flutter doctor -v 进行检测 (感叹号是没用连接可用模拟器) &nbsp;出现上图即代表安装成功后面几个ide检测可以根据自己的需求来,不正常就可能会出现如下情况(主要说说Android toolchain项出现的问题) ✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ (没有检测到sdk的环境变量 ) 看上图正常情况下ANDROID_HOME的环境配置 2.✗ Android license status unknown. （更新sdk） 执行flutter doctor –android-licenses 返回如下内容： A newer version of the Android SDK is required. To update, run: 此处是你AndroidSdk安装目录/tools/bin/sdkmanager –update 执行run后的内容即可 3.Exception in thread “main” java.lang.UnsupportedClassVersionError 这里时jdk的问题 输入java -version查看版本 仅支持1.8+版本 4.证书问题 sdk license available flutter doctor –android-licenses 然后一直选择y即可 虚拟化冲突在使用开始前还需要做一个准备,需要安装AVD虚拟机,也就是模拟机,这时候出现了新的问题这个问题是因为之前安装docker需要开启hyper-v，而AVD需要HAXM的支持，两种同为虚拟化扩展，所以会造成冲突。百度了一下 Window10同时使用Docker Hyper-v和Android模拟器,重启后打开ide，avd完美运行。 Hello Flutter全部配置都完工了，Hello一波 end一次繁琐而又刺激的安装，虽然过程艰难，但是也算收获满满，后续碰到问题和解决办法会补充在end里新收获:写Flutter的时候一定记着,万物皆组件((^_^))]]></content>
       <categories>
-        <category>-[flutter] -[安装与配置]</category>
+        <category>-flutter -安装与配置</category>
       </categories>
   </entry>
   <entry>
