@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[记od的一次使用]]></title>
+    <url>%2F2019%2F06%2F02%2F%E8%AE%B0od%E7%9A%84%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[首次使用od记录一下，主要原因是因为插件弹框和作者交流不妥，决定自己动手解决这个问题，本来准备使用Reflector，尝试后发现并不能打开，最后选择学习OD进行尝试 ##简单认识使用之前首先要认识它的界面具体作用以及一些基础指令在反汇编窗口能够看到想要的东西，然后进行操作比如跳过注册步骤，找到后在数据窗口可以修改相应的数据内容使用的是二进制，因为首次使用所以其他窗口没怎么用到不太了解，再说说基本的OD汇编指令 OD汇编指令 相关说明 NOP 无操作 PUSH 将数据压如堆栈中 POP 出栈（与PUSH相反） JE或者JZ 若相等则跳；如果零标志位Z不为0则跳转,即,要求操作的结果为零 JNE或JNZ 若不等则跳转；如果零标志位Z为0则跳转,即,要求操作的结果非零 CALL 是指将转移到指定的子程序处,它的操作数就是给定的地址 相关汇编指令还有很多，百度一下你就知道 ##实践碰到问题以及技巧1.修改未生效–这个主要是因为保存的问题，OD的保存是”右键”–”复制到可执行文件”然后在保存文件2.找到数据后快速同步定位数据到数据窗口，在反编译窗口右键单击要修改的数据 ##demo实例具体的实例就不记录了，记录一个demo的地址→用OD破解注册过程 ##end1.以上描述的都是关于未加壳的OD汇编描述，加壳需要先脱壳2.如果修改文字内容字符不够，需要在编辑时将多于空位补零填满]]></content>
+      <categories>
+        <category>OD汇编</category>
+      </categories>
+      <tags>
+        <tag>休闲娱乐</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[flutter进阶]]></title>
     <url>%2F2019%2F05%2F31%2Fflutter%E8%BF%9B%E9%98%B6%2F</url>
     <content type="text"><![CDATA[终于学完了Flutter的基础组件，并且实例了一把，感觉光玩组件就很有趣，期待接下来去学习与后台对接成为灵活的App,那么在实践过程中..又踩坑了，记录一下 ##关于报错在学习的过程中出现了这样一个报错 RangeError (index): Invalid value: Valid value range is empty: 0 怎么可能是我出错呢(小声哔哔)，查阅百度这个错误触发的原因是因为构建失败，之后在终端运行 flutter clean 在重新跑项目 成功解决 ##关于打包写完以后想要看看真机是啥效果，于是乎就需要打包，但是在打包之前需要修改几处代码才能够打包成功1.需要有key.jks密钥 AndroidStudio的bin目录位置\keytool -genkey -v -keystore 存放密钥的位置\key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key 之后需要填key、pwd等一系列内容然后就能够生成 2.需要在项目中将密钥添入供项目读取先创建/android/key.properties 存放key的相关信息 storePassword=&lt;创建keystore时的storePassword&gt;keyPassword=&lt;创建keystore时的keyPassword&gt;keyAlias=keystoreFile=&lt;密钥库文件的位置 , 例如: /Users//key.jks&gt; 然后/android/app/build.gradle 找到 android { 在这行之前添加如下代码 def keystorePropertiesFile = rootProject.file(“key.properties”)def keystoreProperties = new Properties()keystoreProperties.load(new FileInputStream(keystorePropertiesFile)) 然后把buildType{}替换一段代码 signingConfigs { release { keyAlias keystoreProperties[‘keyAlias’] keyPassword keystoreProperties[‘keyPassword’] storeFile file(keystoreProperties[‘storeFile’]) storePassword keystoreProperties[‘storePassword’] } } buildTypes { release { signingConfig signingConfigs.release } } 这样就配置完成了，然后运行 flutter build run 就可以正常打包了 ##endstoreFile的路径要填写绝对路径，生成的密钥不要共享和泄露打包完的apk文件在 /build/app/outputs/apk/app-release.apk]]></content>
