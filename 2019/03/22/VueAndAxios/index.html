@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Vue,">
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="因为不太懂前端所以一开始只了解div+css,后来慢慢听别人提起Vue、Angular、React,才开始了解前端框架，首次体验Vue发现相较于div+css有了明显的便利感操作十分简单,为Vue打call总结一下体验感(^_^)">
-<meta name="keywords" content="LemonQi">
+<meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初探Vue+axios">
 <meta property="og:url" content="http://yoursite.com/2019/03/22/VueAndAxios/index.html">
 <meta property="og:site_name" content="LemonQi">
-<meta property="og:description" content="因为不太懂前端所以一开始只了解div+css,后来慢慢听别人提起Vue、Angular、React,才开始了解前端框架，首次体验Vue发现相较于div+css有了明显的便利感操作十分简单,为Vue打call总结一下体验感(^_^)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-23T05:28:24.828Z">
+<meta property="og:image" content="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/c5a8a160ba6e87ffec41f92a3d633f88908a0c6aec93d792f93dfddfb867a6d923d76be353db1ebaefe783b1d0ea4530?pictype=scale&from=30113&version=3.3.3.3&uin=1643994375&fname=vue.jpg&size=750">
+<meta property="og:updated_time" content="2019-12-17T16:01:11.056Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初探Vue+axios">
-<meta name="twitter:description" content="因为不太懂前端所以一开始只了解div+css,后来慢慢听别人提起Vue、Angular、React,才开始了解前端框架，首次体验Vue发现相较于div+css有了明显的便利感操作十分简单,为Vue打call总结一下体验感(^_^)">
+<meta name="twitter:image" content="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/c5a8a160ba6e87ffec41f92a3d633f88908a0c6aec93d792f93dfddfb867a6d923d76be353db1ebaefe783b1d0ea4530?pictype=scale&from=30113&version=3.3.3.3&uin=1643994375&fname=vue.jpg&size=750">
 
 
 
@@ -340,6 +339,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -377,13 +398,24 @@
       
 
       
-        <p>因为不太懂前端所以一开始只了解div+css,后来慢慢听别人提起Vue、Angular、React,才开始了解前端框架，首次体验Vue发现相较于div+css有了明显的便利感操作十分简单,为Vue打call总结一下体验感(<em>^_^</em>)<br><a id="more"></a></p>
+        <p><img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/c5a8a160ba6e87ffec41f92a3d633f88908a0c6aec93d792f93dfddfb867a6d923d76be353db1ebaefe783b1d0ea4530?pictype=scale&amp;from=30113&amp;version=3.3.3.3&amp;uin=1643994375&amp;fname=vue.jpg&amp;size=750" alt><br><a id="more"></a><br>因为不太懂前端所以一开始只了解div+css,后来慢慢听别人提起Vue、Angular、React,才开始了解前端框架，首次体验Vue发现相较于div+css有了明显的便利感操作十分简单,为Vue打call总结一下体验感(<em>^_^</em>)</p>
 <h2 id="Vue优点"><a href="#Vue优点" class="headerlink" title="Vue优点"></a>Vue优点</h2><ol>
 <li>将原来的直接操作dom的思想转变为操作数据,十分方便</li>
 <li>操作简单,通过组合、拼凑快速完成页面渲染</li>
 </ol>
 <h2 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h2><p>axios的好处就不列举了 太多了(๑•̀ㅂ•́)و✧ 相比ajax,axios则更适合前端mvvm思想,它还能自动转换json数据 这更加适应了前后端分离的开发方式</p>
-<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>首次体验Vue的感觉就是这样了 虽然这只是沧海一粟但是只要努力一定能发现更多 给自己加个油(￣▽￣)～■干杯□～(￣▽￣)</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>之前有写过一个没有登录态的前后端整合，后来很久没有写前端，最近整合了一个，填一下之前的坑。</p>
+<h2 id="关于登录态"><a href="#关于登录态" class="headerlink" title="关于登录态"></a>关于登录态</h2><p>前后端分离项目 后端在前端发来登录信息时，后端反馈前端一个token 然后前端存储，并在发送需要验证用户的请求时携带</p>
+<h2 id="如何存储"><a href="#如何存储" class="headerlink" title="如何存储"></a>如何存储</h2><p>使用sessionStorage或者localStorage存储，两者的同点时都使用浏览器存储信息，异点在于session显而易见属于会话存储，当会话结束时存储的内容就失效了 具体使用要看业务内容而定</p>
+<h2 id="关于局域网测试"><a href="#关于局域网测试" class="headerlink" title="关于局域网测试"></a>关于局域网测试</h2><blockquote>
+<p>修改package.json中script下dev的值，在后面加入–host 0.0.0.0</p>
+</blockquote>
+<p>记录一个失了智的遭遇，局域网内自己电脑能访问手机上发送不出去axios请求，因为设置如下（つ﹏⊂）</p>
+<blockquote>
+<p> axios.default.baseUrl =’<a href="http://localhost:8080&#39;" target="_blank" rel="noopener">http://localhost:8080&#39;</a></p>
+</blockquote>
+<p>以上方式是错误的 要配置成局域网IP</p>
+<h2 id="end"><a href="#end" class="headerlink" title="end"></a>end</h2><p>新的坑 下次碰到再记录<br><br>附一个vscode生成Vue代码模板的快捷方式→<a href="https://www.jianshu.com/p/8610215a8a84" target="_blank" rel="noopener">传送门</a></p>
 
       
     </div>
@@ -408,6 +440,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue/" rel="tag"><i class="fa fa-tag"></i> Vue</a>
+          
+        </div>
       
 
       
@@ -536,7 +574,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -547,7 +585,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -558,7 +596,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -621,7 +659,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue优点"><span class="nav-number">1.</span> <span class="nav-text">Vue优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#axios"><span class="nav-number">2.</span> <span class="nav-text">axios</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结尾"><span class="nav-number">3.</span> <span class="nav-text">结尾</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue优点"><span class="nav-number">1.</span> <span class="nav-text">Vue优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#axios"><span class="nav-number">2.</span> <span class="nav-text">axios</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">3.</span> <span class="nav-text">补充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于登录态"><span class="nav-number">4.</span> <span class="nav-text">关于登录态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何存储"><span class="nav-number">5.</span> <span class="nav-text">如何存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于局域网测试"><span class="nav-number">6.</span> <span class="nav-text">关于局域网测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#end"><span class="nav-number">7.</span> <span class="nav-text">end</span></a></li></ol></div>
             
 
           </div>
