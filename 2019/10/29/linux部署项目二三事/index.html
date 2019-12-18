@@ -88,7 +88,7 @@
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572539107105&di=ee5855b3a21e084846f90f7ab58c7452&imgtype=0&src=http%3A%2F%2F09imgmini.eastday.com%2Fmobile%2F20190523%2F20190523175202_fbc1aa4f3ec6332b6841d32388619c53_1.jpeg">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190122221632234.png">
 <meta property="og:image" content="https://img-blog.csdn.net/20180320153334793?watermark/2/text/Ly9ibG9nLmNzZG4ubmV0L3UwMTI5Nzk4NjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2019-12-17T16:09:22.629Z">
+<meta property="og:updated_time" content="2019-12-18T05:16:43.701Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux部署项目及基础环境配置">
 <meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572539107105&di=ee5855b3a21e084846f90f7ab58c7452&imgtype=0&src=http%3A%2F%2F09imgmini.eastday.com%2Fmobile%2F20190523%2F20190523175202_fbc1aa4f3ec6332b6841d32388619c53_1.jpeg">
@@ -401,19 +401,19 @@
 
       
         <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1572539107105&amp;di=ee5855b3a21e084846f90f7ab58c7452&amp;imgtype=0&amp;src=http%3A%2F%2F09imgmini.eastday.com%2Fmobile%2F20190523%2F20190523175202_fbc1aa4f3ec6332b6841d32388619c53_1.jpeg" alt><br><a id="more"></a><br>记录一下关于linux服务器的项目环境安装和部署</p>
-<p>##所选环境##<br>CentOS6.8+JDK8+MySQL+Tomcat</p>
-<p>##安装server端MySQL##<br>使用yum命令安装MySQL</p>
+<h2 id="所选环境"><a href="#所选环境" class="headerlink" title="所选环境"></a>所选环境</h2><p>CentOS6.8+JDK8+MySQL+Tomcat</p>
+<h2 id="安装server端MySQL"><a href="#安装server端MySQL" class="headerlink" title="安装server端MySQL"></a>安装server端MySQL</h2><p>使用yum命令安装MySQL</p>
 <blockquote>
 <p>yum install -y mysql mysql-server</p>
 </blockquote>
 <p>等待安装完成MySQL部分就基本安装完成了，但是此时的MySQL默认是只有本机(locathost)能够连接的，在终端登陆MySQL修改远程连接的SQL；</p>
 <p><code>mysql&gt;select host,user from mysql.user;</code><br><code>mysql&gt;update user set host=&#39;%&#39; where user=&#39;root&#39; and host=&#39;127.0.0.1&#39;;</code><br>然后刷新MySQL,然后就可以远程连接了<br><code>mysql&gt;flush privileges;</code></p>
-<p>##安装JDK##<br>解压JDK的压缩包<br><code>tar -zxf jdk-xx-xxx...</code><br>vi /etc/profile 配置jdk环境变量</p>
+<h2 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h2><p>解压JDK的压缩包<br><code>tar -zxf jdk-xx-xxx...</code><br>vi /etc/profile 配置jdk环境变量</p>
 <blockquote>
 <p>export JAVA_HOME=pwd得到的jdk路径<br>exprot PATH=$PATH:$JAVA_HOME/bin<br>配置好后刷新profile文件配置 -&gt;source /etc/profile<br>配置时注意等号两边不要有空格不然会出现乱七八糟的报错</p>
 </blockquote>
 <p>刷新后输入java-version出现了熟悉的版本号命令行</p>
-<p>##部署Tomcat##<br>同jdk第一步，解压后apache目录中有很多文件 要运行的war包要放入webapps中，默认运行的项目名为ROOT；bin目录中负责apache的启动和停止</p>
+<h2 id="部署Tomcat"><a href="#部署Tomcat" class="headerlink" title="部署Tomcat"></a>部署Tomcat</h2><p>同jdk第一步，解压后apache目录中有很多文件 要运行的war包要放入webapps中，默认运行的项目名为ROOT；bin目录中负责apache的启动和停止</p>
 <blockquote>
 <p>启动→./startup.sh    停止→./shutdown.sh</p>
 </blockquote>
@@ -421,7 +421,7 @@
 <blockquote>
 <p>tail -f logs/catalina.out 查看tomcat的日志</p>
 </blockquote>
-<p>##注意事项##<br>1.mysql和tomcat的端口都需要在iptables文件中增加，否则远程连接和访问8080时会出现无法连接<img src="https://img-blog.csdnimg.cn/20190122221632234.png" alt></p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>1.mysql和tomcat的端口都需要在iptables文件中增加，否则远程连接和访问8080时会出现无法连接<img src="https://img-blog.csdnimg.cn/20190122221632234.png" alt></p>
 <blockquote>
 <p>vi /etc/sysconfig/iptables<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 3306 -j ACCEPT<br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 8080 -j ACCEPT<br>刷新配置文件 -&gt; service iptables restart<br>这里需要注意 新增的端口信息一定要在icmp-host-prohibited之前</p>
 </blockquote>
@@ -437,7 +437,7 @@
 <blockquote>
 <pre><code>yum install -y lrzsz  rz上传 sz下载
 </code></pre></blockquote>
-<p>##end##<br>基础就是这些，其他负载啥的以后填坑</p>
+<h2 id="end"><a href="#end" class="headerlink" title="end"></a>end</h2><p>基础就是这些，其他负载啥的以后填坑</p>
 
       
     </div>
@@ -683,7 +683,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于压缩包"><span class="nav-number">1.</span> <span class="nav-text">关于压缩包</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#所选环境"><span class="nav-number">1.</span> <span class="nav-text">所选环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装server端MySQL"><span class="nav-number">2.</span> <span class="nav-text">安装server端MySQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装JDK"><span class="nav-number">3.</span> <span class="nav-text">安装JDK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署Tomcat"><span class="nav-number">4.</span> <span class="nav-text">部署Tomcat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">5.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于压缩包"><span class="nav-number">6.</span> <span class="nav-text">关于压缩包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#end"><span class="nav-number">7.</span> <span class="nav-text">end</span></a></li></ol></div>
             
 
           </div>
