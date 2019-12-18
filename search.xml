@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[springboot完美跨域]]></title>
+    <url>%2F2019%2F12%2F18%2Fspringboot%E5%AE%8C%E7%BE%8E%E8%B7%A8%E5%9F%9F%2F</url>
+    <content type="text"><![CDATA[什么是跨域前后端分离开发的场景已经趋于常态，跨域就必不可少 URL 说明 是否允许通信 www.baidu.com/a.jswww.baidu.com/b.js 同域 允许通讯 www.baidu.com:8080/a.jswww.baidu.com:8081/b.js 同域不同端口 不允许通信(跨域） www.baidu.com/a.jswww.xxx.com/b.js 不同域 不允许通信(跨域） 有哪些配置方式springboot的跨域一般有两种情况，请求上加注解和统一配置(configration/filter)，像我这样图方便的人就喜欢统一配置，网上的通用配置很多 哪儿尬然而尴尬的事情发生了，前端携带token请求后端接口时被拦截了500，仔细看了请求 发现浏览器在发送真实请求前会发送一个options预请求进行校验需要满足以下条件 请求方法不是GET/HEAD/POST POST请求的Content-Type并非application/x-www-form-urlencoded, multipart/form-data, 或text/plain 请求设置了自定义的header字段 显然 token并不属于官方请求头 那么就是这个通用失效的原因了，贴上这次使用的代码，下次不尬 @Bean public FilterRegistrationBean corsFilter() { // 注册CORS过滤器 UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource(); CorsConfiguration config = new CorsConfiguration(); config.setAllowCredentials(true); // 是否支持安全证书 config.addAllowedOrigin(&quot;*&quot;); // 允许任何域名使用 config.addAllowedHeader(&quot;*&quot;); // 允许任何头 config.addAllowedMethod(&quot;*&quot;); // 允许任何方法（post、get等） // 预检请求的有效期，单位为秒。 // config.setMaxAge(3600L); source.registerCorsConfiguration(&quot;/**&quot;, config); FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source)); bean.setOrder(0); return bean; } end]]></content>
+      <tags>
+        <tag>SpringBoot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[memcached入门与应用]]></title>
     <url>%2F2019%2F12%2F12%2Fmemcached%E5%85%A5%E9%97%A8%E4%B8%8E%E5%BA%94%E7%94%A8%2F</url>
     <content type="text"><![CDATA[是什么是一款高性能、分布式的内存对象缓存系统可以有效地分担数据库负载，基于libevent事件处理实现无阻塞通信（高性能原因之一），是以key/value键值对形式存储 有什么优势熟悉memcached的童鞋可能知道 一般它都会被和reids进行比较，两者各有千秋，redis支持5种数据类型存储，memcached仅支持key/value；但memcached的性能优于redis。 能干啥使用memcached做缓存可以有效地减轻数据库压力，提高系统性能 关于存储底层存储内存分配机制memcached数据最终会存入chunk，分配时通过slab分配器决定的，slabclass会记录slab的信息，每个slab下有无数个等份page，page下有无数个等份chunk，chunk是数据的真实存储单位，默认大小为80byte，slab的大小取决于自增长因子 寻找chunk的过程memcached的删除属于逻辑删除，删除和过期的chunk会标识后放入slot，以供后续存储的空间处理，当在slot中没有找到不用的chunk时，会寻找空闲chunk存储，当两者都不满足时会触发LRU机制，在寻找chunk存储时，不会因为其他slab有空闲就不触发LRU流程 memcached分布式的hash算法①余数hash由名可得，这种算法时取余数获得存储的位置，主要是将key值转换为hash值然后除以机器数量取余。此方法有很大缺陷，一旦机器数量变化(增加节点/机器损坏)数据将会失效； ②※一致性hash将服务器列表(真实节点)和虚拟节点分布在一个0-2的32次方的圆上。同样key取hash值，通过余数方式确定存放机器，如果命中的时虚拟节点则顺时针找到下一个真实节点存储。此方法影响更小、易排查 哪儿尬这次没出现啥尬的，安装过程就不记录了。碰到新的方法或问题，下次再记录 endmemcached基于libevent，那么安装也依赖于libevent，所以安装时需要先安装libeventmemcached可以通过设置CAS或者版本号的方式来避免重复修改]]></content>
