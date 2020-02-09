@@ -87,7 +87,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/b6c071fe26d230c2c8117e8e7e9d2c4a4c965b77a4d0ef8ebae202a23d9985b4e7e600c041c60ff99ca9539ae14d940f?pictype=scale&from=30113&version=3.3.3.3&uin=1643994375&fname=5ccbbb441314595022c7e5ea41ad203e.jpg&size=750">
 <meta property="og:image" content="http://yoursite.com/images/201908271955.png">
-<meta property="og:updated_time" content="2019-08-29T04:03:08.617Z">
+<meta property="og:updated_time" content="2019-12-29T07:25:06.611Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序初体验">
 <meta name="twitter:image" content="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/b6c071fe26d230c2c8117e8e7e9d2c4a4c965b77a4d0ef8ebae202a23d9985b4e7e600c041c60ff99ca9539ae14d940f?pictype=scale&from=30113&version=3.3.3.3&uin=1643994375&fname=5ccbbb441314595022c7e5ea41ad203e.jpg&size=750">
@@ -407,7 +407,15 @@
 <li>小程序的发布很严格，部分类目对个人是不开放的，需要相关的资质</li>
 </ol>
 <h2 id="end"><a href="#end" class="headerlink" title="end"></a>end</h2><p>小技巧:在app.json中输入将要编写的文件名称，会快速生成wxml、wxss，js、json文件</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>(一)补充一个navigat传递参数值过长的问题，此类参数诸如url等等，这是会因为参数过长无法直接传递(接收后不完整)，可通过navigateTo传递；</p>
+<pre><code>wx.navigateTo({// 传递时通过encodeURIComponent编码传送
+    url: &apos;../details/details?id=&apos; + encodeURIComponent(id)
+});
 
+onLoad(options) {// 接收时解码即可
+    var id = decodeURIComponent(options.id);
+}
+</code></pre>
       
     </div>
     
@@ -565,7 +573,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -576,7 +584,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -587,7 +595,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -650,7 +658,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发异同"><span class="nav-number">2.</span> <span class="nav-text">开发异同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关文档及发布"><span class="nav-number">3.</span> <span class="nav-text">相关文档及发布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#end"><span class="nav-number">4.</span> <span class="nav-text">end</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发异同"><span class="nav-number">2.</span> <span class="nav-text">开发异同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关文档及发布"><span class="nav-number">3.</span> <span class="nav-text">相关文档及发布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#end"><span class="nav-number">4.</span> <span class="nav-text">end</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">5.</span> <span class="nav-text">补充</span></a></li></ol></div>
             
 
           </div>
@@ -672,7 +680,7 @@ var jiathis_config={
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[小程序的常用组件、布局记载(二)]]></title>
+    <url>%2F2020%2F02%2F07%2F%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6and%E5%B8%83%E5%B1%80%E8%AE%B0%E8%BD%BD(%E4%BA%8C)%2F</url>
+    <content type="text"><![CDATA[简述本贴将持续记录碰到的常见布局、组件等 小程序页面置顶置底置顶或置底其本质是一样的 都可以通过绝对定位来实现 代码如下 置顶&lt;view class=&quot;page_head&quot; style=&quot;position:fixed; top:0;width: 750rpx;&quot;&gt;&lt;/view&gt; 置底&lt;view class=&quot;page_foot&quot; style=&quot;position:fixed; bottom:0;width: 750rpx;&quot;&gt;&lt;/view&gt; 小程序自定义弹框自定义弹框 小程序文档中有个wx.shiwModal能够实现，但并不能满足需求，类似于选择框；自定义实现弹框 实现如下wxml:123456789&lt;view class=&quot;mask&quot; catchtouchmove=&quot;preventTouchMove&quot; wx:if=&quot;&#123;&#123;showModal&#125;&#125;&quot;&gt;&lt;/view&gt; &lt;view class=&quot;modalDlg&quot; wx:if=&quot;&#123;&#123;showModal&#125;&#125;&quot;&gt; &lt;image src=&quot;/figures/logo-smile.png&quot;/&gt; &lt;text&gt;欢迎来到模态对话框~&lt;/text&gt; &lt;button bindtap=&quot;go&quot;&gt;点我可以关掉对话框&lt;/button&gt;&lt;/view&gt; &lt;button bindtap=&quot;submit&quot;&gt;点我弹窗&lt;/button&gt; wxss:12345678910111213141516171819202122232425.mask&#123; width: 100%; //蒙板占满屏幕 height: 100%; //蒙板占满屏幕 position: fixed; top: 0; left: 0; background: #000; z-index: 9000; opacity: 0.7;&#125; .modalDlg&#123; width: 580rpx; height: 620rpx; position: fixed; top: 50%; left: 0; z-index: 9999; //此处悬浮要大于蒙层 margin: -370rpx 85rpx; background-color: #fff; border-radius: 36rpx; display: flex; flex-direction: column; align-items: center;&#125; js:12345678910111213141516171819202122232425Page(&#123; data: &#123; showModal: false &#125;, submit: function() &#123; this.setData(&#123; showModal: true &#125;) &#125;, //空函数，使用catch事件 阻止touchmove这样一个冒泡事件继续向下传递 preventTouchMove: function() &#123; &#125;, go: function() &#123; this.setData(&#123; showModal: false &#125;) &#125; &#125;) end]]></content>
+      <categories>
+        <category>小程序</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[swagger的一次报错]]></title>
+    <url>%2F2020%2F02%2F05%2Fswagger%E7%9A%84%E4%B8%80%E6%AC%A1%E6%8A%A5%E9%94%99%2F</url>
+    <content type="text"><![CDATA[报错Unable to infer base url.最近在搭脚手架 加入swagger2的时候 run项目发现突然报错了，错误信息如下1234Unable to infer base url.This is common when using dynamic servlet registration or when the API is behind an API Gateway.The base url is the root of where all the swagger resources are served. For e.g. if the api is available at http://example.org/api/v2/api-docs then the base url is http://example.org/api/.Please enter the location manually: 问题排查第一反应是启动类未定义相应注解，看了之后排除了，之后就考虑到了版本问题，最开始引入的是2.8版本，感觉不太顺手，又回退版本到2.4，这成为了本次问题的关键，将浏览器的缓存清除后，问题完美解决 end]]></content>
+      <categories>
+        <category>swagger</category>
+      </categories>
+      <tags>
+        <tag>swagger</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[小程序的常用组件、布局记载(一)]]></title>
+    <url>%2F2020%2F01%2F09%2F%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6and%E5%B8%83%E5%B1%80%E8%AE%B0%E8%BD%BD(%E4%B8%80)%2F</url>
+    <content type="text"><![CDATA[简述本贴将持续记录碰到的常见布局、组件等 返顶方式在页面内容过长时 我们通常会通过设置按钮进行锚点返顶操作，小程序中也有同样方式进行该操作 方式一使用view形式的回到顶部wxml1&lt;image src=&apos;../../img/button-top.png&apos; class=&apos;goTop&apos; hidden=&apos;&#123;&#123;!floorstatus&#125;&#125;&apos; bindtap=&quot;goTop&quot;&gt;&lt;/image&gt; wxss12345678910/* 返回顶部 */.goTop&#123; height: 80rpx; width: 80rpx; position: fixed; bottom: 50rpx; background: rgba(0,0,0,.3); right: 30rpx; border-radius: 50%;&#125; js123456789101112131415161718192021222324252627// 获取滚动条当前位置onPageScroll: function (e) &#123; console.log(e) if (e.scrollTop &gt; 100) &#123; this.setData(&#123; floorstatus: true &#125;); &#125; else &#123; this.setData(&#123; floorstatus: false &#125;); &#125;&#125;,//回到顶部goTop: function (e) &#123; // 一键回到顶部 if (wx.pageScrollTo) &#123; wx.pageScrollTo(&#123; scrollTop: 0 &#125;) &#125; else &#123; wx.showModal(&#123; title: &apos;提示&apos;, content: &apos;当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。&apos; &#125;) &#125;&#125;, 方式二使用scroll-view形式的回到顶部wxml12&lt;scroll-view scroll-y scroll-top=&apos;&#123;&#123;topNum&#125;&#125;&apos; bindscroll=&quot;scrolltoupper&quot;&gt;&lt;image src=&apos;../../img/button-top.png&apos; class=&apos;goTop&apos; hidden=&apos;&#123;&#123;!floorstatus&#125;&#125;&apos; bindtap=&quot;goTop&quot;&gt;&lt;/image&gt; wxss(同上)js1234567891011121314151617181920// 获取滚动条当前位置scrolltoupper:function(e)&#123; console.log(e) if (e.detail.scrollTop &gt; 100) &#123; this.setData(&#123; floorstatus: true &#125;); &#125; else &#123; this.setData(&#123; floorstatus: false &#125;); &#125;&#125;,//回到顶部goTop: function (e) &#123; // 一键回到顶部 this.setData(&#123; topNum: this.data.topNum = 0 &#125;);&#125;, 居中方式方式一(flex流布局)12justify-content：center；align-items：center； 方式二(一般布局)12text-align:center;align-items:center; end]]></content>
+      <categories>
+        <category>小程序</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[vue数据处理]]></title>
+    <url>%2F2020%2F01%2F09%2Fvue%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%2F</url>
+    <content type="text"><![CDATA[简述一般我们会将数据通过json等方式传递到前端，但是性别等需要汉字的字段则不会直接存入数据库(浪费内存)，于是传递到前端就是0，1，2…,关于数据转换记录几种处理方式 逐条处理当数据放入需要展示的位置时我们通过v:if处理可能碰到的情况，举例:123456&lt;el-table-column prop=&quot;ud_status&quot; label=&quot;性别&quot; :formatter=&quot;formatRole&quot; align=&quot;center&quot;&gt;&lt;/el-table-column&gt;// jsformatRole: function(row, column) &#123; return row.ud_status == &apos;0&apos; ? &quot;男&quot; : row.ud_status == &apos;1&apos; ? &quot;女&quot; : &quot;?&quot;;&#125;, 模板统一的情况当表格多个列通过循环进行展示时，我们将无法对模板单一字段进行处理，可以通过数据遍历的方式进行处理，举例:12345678910// jsthis.usersData.map(function (val) &#123; if (val.gender == 0) &#123; val.gender = &apos;男&apos; &#125; else if (val.gender == 1) &#123; val.gender = &apos;女&apos; &#125; else &#123; val.gender = &apos;?&apos; &#125;&#125;) 最后为了方便可以将统一的这种情况进行封装使用，既可以愉快的处理逻辑，又可以”偷懒”了~(￣▽￣)~*]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[springboot完美跨域]]></title>
     <url>%2F2019%2F12%2F18%2Fspringboot%E5%AE%8C%E7%BE%8E%E8%B7%A8%E5%9F%9F%2F</url>
     <content type="text"><![CDATA[什么是跨域前后端分离开发的场景已经趋于常态，跨域就必不可少 URL 说明 是否允许通信 www.baidu.com/a.jswww.baidu.com/b.js 同域 允许通讯 www.baidu.com:8080/a.jswww.baidu.com:8081/b.js 同域不同端口 不允许通信(跨域） www.baidu.com/a.jswww.xxx.com/b.js 不同域 不允许通信(跨域） 有哪些配置方式springboot的跨域一般有两种情况，请求上加注解和统一配置(configration/filter)，像我这样图方便的人就喜欢统一配置，网上的通用配置很多 哪儿尬然而尴尬的事情发生了，前端携带token请求后端接口时被拦截了500，仔细看了请求 发现浏览器在发送真实请求前会发送一个options预请求进行校验需要满足以下条件 请求方法不是GET/HEAD/POST POST请求的Content-Type并非application/x-www-form-urlencoded, multipart/form-data, 或text/plain 请求设置了自定义的header字段 显然 token并不属于官方请求头 那么就是这个通用失效的原因了，贴上这次使用的代码，下次不尬 @Bean public FilterRegistrationBean corsFilter() { // 注册CORS过滤器 UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource(); CorsConfiguration config = new CorsConfiguration(); config.setAllowCredentials(true); // 是否支持安全证书 config.addAllowedOrigin(&quot;*&quot;); // 允许任何域名使用 config.addAllowedHeader(&quot;*&quot;); // 允许任何头 config.addAllowedMethod(&quot;*&quot;); // 允许任何方法（post、get等） // 预检请求的有效期，单位为秒。 // config.setMaxAge(3600L); source.registerCorsConfiguration(&quot;/**&quot;, config); FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source)); bean.setOrder(0); return bean; } end]]></content>
@@ -35,7 +79,7 @@
   <entry>
     <title><![CDATA[微信小程序初体验]]></title>
     <url>%2F2019%2F08%2F22%2F%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%9D%E4%BD%93%E9%AA%8C%2F</url>
-    <content type="text"><![CDATA[微信小程序已经出现很久，长听说却没有上手学习，听说要求严格且繁杂众说纷纭，最近正好有学习，记录一番 介绍微信小程序的介绍→微信小程序 开发异同1.开发工具 在开放工具上小程序使用了特有的微信开发者工具2.布局差异 小程序拥有自己特殊的文本标记语言小程序的写法与Vue相似，基本与web的变化不大，微信小程序为了方便开发者还设计了云开发用来设计服务端（下次使用到再记录） 相关文档及发布 开发之前需要了解其组成，文档当然是→官方文档 小程序的发布很严格，部分类目对个人是不开放的，需要相关的资质 end小技巧:在app.json中输入将要编写的文件名称，会快速生成wxml、wxss，js、json文件]]></content>
+    <content type="text"><![CDATA[微信小程序已经出现很久，长听说却没有上手学习，听说要求严格且繁杂众说纷纭，最近正好有学习，记录一番 介绍微信小程序的介绍→微信小程序 开发异同1.开发工具 在开放工具上小程序使用了特有的微信开发者工具2.布局差异 小程序拥有自己特殊的文本标记语言小程序的写法与Vue相似，基本与web的变化不大，微信小程序为了方便开发者还设计了云开发用来设计服务端（下次使用到再记录） 相关文档及发布 开发之前需要了解其组成，文档当然是→官方文档 小程序的发布很严格，部分类目对个人是不开放的，需要相关的资质 end小技巧:在app.json中输入将要编写的文件名称，会快速生成wxml、wxss，js、json文件 补充(一)补充一个navigat传递参数值过长的问题，此类参数诸如url等等，这是会因为参数过长无法直接传递(接收后不完整)，可通过navigateTo传递； wx.navigateTo({// 传递时通过encodeURIComponent编码传送 url: &apos;../details/details?id=&apos; + encodeURIComponent(id) }); onLoad(options) {// 接收时解码即可 var id = decodeURIComponent(options.id); }]]></content>
       <categories>
         <category>小程序</category>
       </categories>
