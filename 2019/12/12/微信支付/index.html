@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="微信支付,">
+
+
+
+
+
+
+
+
+
+
+<meta name="keywords" content="微信支付">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信支付记录篇">
+<meta property="og:url" content="http://yoursite.com/2019/12/12/微信支付/index.html">
+<meta property="og:site_name" content="LemonQi">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3939231759,833545052&fm=26&gp=0.jpg">
+<meta property="og:updated_time" content="2020-05-02T13:42:23.694Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信支付记录篇">
+<meta name="twitter:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3939231759,833545052&fm=26&gp=0.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/12/微信支付/">
+
+
+
+
+
+  <title>微信支付记录篇 | LemonQi</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  <script type="text/javascript">
+	console.log("Hello world");
+	console.log("交个朋友吧(*^_^*)");
+  </script>
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+		<a href="https://github.com/qylemon/" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	</div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LemonQi</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Hello,world</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-语录">
+          <a href="/quotations/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            语录
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/12/微信支付/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LemonQi">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LemonQi">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">微信支付记录篇</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-12T23:44:02+08:00">
+                2019-12-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/支付/" itemprop="url" rel="index">
+                    <span itemprop="name">支付</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/12/12/微信支付/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/12/12/微信支付/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3939231759,833545052&amp;fm=26&amp;gp=0.jpg" alt><a id="more"></a></p>
+<h1 id="微信支付"><a href="#微信支付" class="headerlink" title="微信支付"></a>微信支付</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>我们需要从小程序和商户平台获取如下参数 </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数名称</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">appid</td>
+<td style="text-align:center">小程序appid</td>
+</tr>
+<tr>
+<td style="text-align:center">mch_id</td>
+<td style="text-align:center">商户id</td>
+</tr>
+<tr>
+<td style="text-align:center">key</td>
+<td style="text-align:center">商户密钥</td>
+</tr>
+</tbody>
+</table>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">配置类 wechatConfig(来源woniu95)</span><br><span class="line">public class WechatConfig &#123;</span><br><span class="line">    //小程序appid</span><br><span class="line">    public static final String appid = &quot;&quot;;</span><br><span class="line">    //微信支付的商户id</span><br><span class="line">    public static final String mch_id = &quot;&quot;;</span><br><span class="line">    //微信支付的商户密钥</span><br><span class="line">    public static final String key = &quot;&quot;;</span><br><span class="line">    //支付成功后的服务器回调url，这里填PayController里的回调函数地址</span><br><span class="line">    public static final String notify_url = &quot;&quot;;</span><br><span class="line">    //签名方式，固定值</span><br><span class="line">    public static final String SIGNTYPE = &quot;MD5&quot;;</span><br><span class="line">    //交易类型，小程序支付的固定值为JSAPI</span><br><span class="line">    public static final String TRADETYPE = &quot;JSAPI&quot;;</span><br><span class="line">    //微信统一下单接口地址</span><br><span class="line">    public static final String pay_url = &quot;https://api.mch.weixin.qq.com/pay/unifiedorder&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br></pre></td><td class="code"><pre><span class="line">工具类 payutil</span><br><span class="line">public class PayUtil &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 签名字符串</span><br><span class="line">     *</span><br><span class="line">     * @param text          需要签名的字符串</span><br><span class="line">     * @param key           密钥</span><br><span class="line">     * @param input_charset 编码格式</span><br><span class="line">     * @return 签名结果</span><br><span class="line">     */</span><br><span class="line">    public static String sign(String text, String key, String input_charset) &#123;</span><br><span class="line">        text = text + &quot;&amp;key=&quot; + key;</span><br><span class="line">        return DigestUtils.md5Hex(getContentBytes(text, input_charset));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 签名字符串</span><br><span class="line">     *</span><br><span class="line">     * @param text          需要签名的字符串</span><br><span class="line">     * @param sign          签名结果</span><br><span class="line">     * @param key           密钥</span><br><span class="line">     * @param input_charset 编码格式</span><br><span class="line">     * @return 签名结果</span><br><span class="line">     */</span><br><span class="line">    public static boolean verify(String text, String sign, String key, String input_charset) &#123;</span><br><span class="line">        text = text + key;</span><br><span class="line">        String mysign = DigestUtils.md5Hex(getContentBytes(text, input_charset));</span><br><span class="line">        if (mysign.equals(sign)) &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @param content</span><br><span class="line">     * @param charset</span><br><span class="line">     * @return</span><br><span class="line">     * @throws java.security.SignatureException</span><br><span class="line">     * @throws UnsupportedEncodingException</span><br><span class="line">     */</span><br><span class="line">    public static byte[] getContentBytes(String content, String charset) &#123;</span><br><span class="line">        if (charset == null || &quot;&quot;.equals(charset)) &#123;</span><br><span class="line">            return content.getBytes();</span><br><span class="line">        &#125;</span><br><span class="line">        try &#123;</span><br><span class="line">            return content.getBytes(charset);</span><br><span class="line">        &#125; catch (UnsupportedEncodingException e) &#123;</span><br><span class="line">            throw new RuntimeException(&quot;MD5签名过程中出现错误,指定的编码集不对,您目前指定的编码集是:&quot; + charset);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static boolean isValidChar(char ch) &#123;</span><br><span class="line">        if ((ch &gt;= &apos;0&apos; &amp;&amp; ch &lt;= &apos;9&apos;) || (ch &gt;= &apos;A&apos; &amp;&amp; ch &lt;= &apos;Z&apos;) || (ch &gt;= &apos;a&apos; &amp;&amp; ch &lt;= &apos;z&apos;))</span><br><span class="line">            return true;</span><br><span class="line">        if ((ch &gt;= 0x4e00 &amp;&amp; ch &lt;= 0x7fff) || (ch &gt;= 0x8000 &amp;&amp; ch &lt;= 0x952f))</span><br><span class="line">            return true;// 简体中文汉字编码     </span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 除去数组中的空值和签名参数</span><br><span class="line">     *</span><br><span class="line">     * @param sArray 签名参数组</span><br><span class="line">     * @return 去掉空值与签名参数后的新签名参数组</span><br><span class="line">     */</span><br><span class="line">    public static Map&lt;String, String&gt; paraFilter(Map&lt;String, String&gt; sArray) &#123;</span><br><span class="line">        Map&lt;String, String&gt; result = new HashMap&lt;String, String&gt;();</span><br><span class="line">        if (sArray == null || sArray.size() &lt;= 0) &#123;</span><br><span class="line">            return result;</span><br><span class="line">        &#125;</span><br><span class="line">        for (String key : sArray.keySet()) &#123;</span><br><span class="line">            String value = sArray.get(key);</span><br><span class="line">            if (value == null || value.equals(&quot;&quot;) || key.equalsIgnoreCase(&quot;sign&quot;)</span><br><span class="line">                    || key.equalsIgnoreCase(&quot;sign_type&quot;)) &#123;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            result.put(key, value);</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 把数组所有元素排序，并按照“参数=参数值”的模式用“&amp;”字符拼接成字符串</span><br><span class="line">     *</span><br><span class="line">     * @param params 需要排序并参与字符拼接的参数组</span><br><span class="line">     * @return 拼接后字符串</span><br><span class="line">     */</span><br><span class="line">    public static String createLinkString(Map&lt;String, String&gt; params) &#123;</span><br><span class="line">        List&lt;String&gt; keys = new ArrayList&lt;&gt;(params.keySet());</span><br><span class="line">        Collections.sort(keys);</span><br><span class="line">        String prestr = &quot;&quot;;</span><br><span class="line">        for (int i = 0; i &lt; keys.size(); i++) &#123;</span><br><span class="line">            String key = keys.get(i);</span><br><span class="line">            String value = params.get(key);</span><br><span class="line">            if (i == keys.size() - 1) &#123;// 拼接时，不包括最后一个&amp;字符     </span><br><span class="line">                prestr = prestr + key + &quot;=&quot; + value;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                prestr = prestr + key + &quot;=&quot; + value + &quot;&amp;&quot;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return prestr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @param requestUrl    请求地址</span><br><span class="line">     * @param requestMethod 请求方法</span><br><span class="line">     * @param outputStr     参数</span><br><span class="line">     */</span><br><span class="line">    public static String httpRequest(String requestUrl, String requestMethod, String outputStr) &#123;</span><br><span class="line">        // 创建SSLContext     </span><br><span class="line">        StringBuffer buffer = null;</span><br><span class="line">        try &#123;</span><br><span class="line">            URL url = new URL(requestUrl);</span><br><span class="line">            HttpURLConnection conn = (HttpURLConnection) url.openConnection();</span><br><span class="line">            conn.setRequestMethod(requestMethod);</span><br><span class="line">            conn.setDoOutput(true);</span><br><span class="line">            conn.setDoInput(true);</span><br><span class="line">            conn.connect();</span><br><span class="line">            //往服务器端写内容     </span><br><span class="line">            if (null != outputStr) &#123;</span><br><span class="line">                OutputStream os = conn.getOutputStream();</span><br><span class="line">                os.write(outputStr.getBytes(&quot;utf-8&quot;));</span><br><span class="line">                os.close();</span><br><span class="line">            &#125;</span><br><span class="line">            // 读取服务器端返回的内容     </span><br><span class="line">            InputStream is = conn.getInputStream();</span><br><span class="line">            InputStreamReader isr = new InputStreamReader(is, &quot;utf-8&quot;);</span><br><span class="line">            BufferedReader br = new BufferedReader(isr);</span><br><span class="line">            buffer = new StringBuffer();</span><br><span class="line">            String line = null;</span><br><span class="line">            while ((line = br.readLine()) != null) &#123;</span><br><span class="line">                buffer.append(line);</span><br><span class="line">            &#125;</span><br><span class="line">            br.close();</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        return buffer.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static String urlEncodeUTF8(String source) &#123;</span><br><span class="line">        String result = source;</span><br><span class="line">        try &#123;</span><br><span class="line">            result = java.net.URLEncoder.encode(source, &quot;UTF-8&quot;);</span><br><span class="line">        &#125; catch (UnsupportedEncodingException e) &#123;</span><br><span class="line">            // TODO Auto-generated catch block</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 解析xml,返回第一级元素键值对。如果第一级元素有子节点，则此节点的值是子节点的xml数据。</span><br><span class="line">     *</span><br><span class="line">     * @param strxml</span><br><span class="line">     * @return</span><br><span class="line">     * @throws org.jdom2.JDOMException</span><br><span class="line">     * @throws IOException</span><br><span class="line">     */</span><br><span class="line">    public static Map doXMLParse(String strxml) throws Exception &#123;</span><br><span class="line">        if (null == strxml || &quot;&quot;.equals(strxml)) &#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Map m = new HashMap();</span><br><span class="line">        InputStream in = String2Inputstream(strxml);</span><br><span class="line">        SAXBuilder builder = new SAXBuilder();</span><br><span class="line">        Document doc = builder.build(in);</span><br><span class="line">        Element root = doc.getRootElement();</span><br><span class="line">        List list = root.getChildren();</span><br><span class="line">        Iterator it = list.iterator();</span><br><span class="line">        while (it.hasNext()) &#123;</span><br><span class="line">            Element e = (Element) it.next();</span><br><span class="line">            String k = e.getName();</span><br><span class="line">            String v = &quot;&quot;;</span><br><span class="line">            List children = e.getChildren();</span><br><span class="line">            if (children.isEmpty()) &#123;</span><br><span class="line">                v = e.getTextNormalize();</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                v = getChildrenText(children);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            m.put(k, v);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //关闭流</span><br><span class="line">        in.close();</span><br><span class="line"></span><br><span class="line">        return m;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 获取子结点的xml</span><br><span class="line">     *</span><br><span class="line">     * @param children</span><br><span class="line">     * @return String</span><br><span class="line">     */</span><br><span class="line">    public static String getChildrenText(List children) &#123;</span><br><span class="line">        StringBuffer sb = new StringBuffer();</span><br><span class="line">        if (!children.isEmpty()) &#123;</span><br><span class="line">            Iterator it = children.iterator();</span><br><span class="line">            while (it.hasNext()) &#123;</span><br><span class="line">                Element e = (Element) it.next();</span><br><span class="line">                String name = e.getName();</span><br><span class="line">                String value = e.getTextNormalize();</span><br><span class="line">                List list = e.getChildren();</span><br><span class="line">                sb.append(&quot;&lt;&quot; + name + &quot;&gt;&quot;);</span><br><span class="line">                if (!list.isEmpty()) &#123;</span><br><span class="line">                    sb.append(getChildrenText(list));</span><br><span class="line">                &#125;</span><br><span class="line">                sb.append(value);</span><br><span class="line">                sb.append(&quot;&lt;/&quot; + name + &quot;&gt;&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static InputStream String2Inputstream(String str) &#123;</span><br><span class="line">        return new ByteArrayInputStream(str.getBytes());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br></pre></td><td class="code"><pre><span class="line">controller</span><br><span class="line">@Api(tags = &quot;支付模块&quot;)</span><br><span class="line">@RestController</span><br><span class="line">@RequestMapping(&quot;&quot;)</span><br><span class="line">public class PayController &#123;</span><br><span class="line"></span><br><span class="line">    @ApiOperation(value = &quot;请求支付接口&quot;)</span><br><span class="line">    @RequestMapping(value = &quot;/wxPay&quot;, method = RequestMethod.POST)</span><br><span class="line">    public JSONObject wxPay(HttpServletRequest request) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            //生成的随机字符串</span><br><span class="line">            String nonce_str = getRandomStringByLength(32);</span><br><span class="line">            //商品名称</span><br><span class="line">            String body = &quot;测试商品名称&quot;;</span><br><span class="line">            //获取客户端的ip地址</span><br><span class="line">            String spbill_create_ip = getIpAddr(request);</span><br><span class="line"></span><br><span class="line">            //组装参数，用户生成统一下单接口的签名</span><br><span class="line">            Map&lt;String, String&gt; packageParams = new HashMap&lt;&gt;();</span><br><span class="line">            packageParams.put(&quot;appid&quot;, WechatConfig.appid);</span><br><span class="line">            packageParams.put(&quot;mch_id&quot;, WechatConfig.mch_id);</span><br><span class="line">            packageParams.put(&quot;nonce_str&quot;, nonce_str);</span><br><span class="line">            packageParams.put(&quot;body&quot;, body);</span><br><span class="line">            packageParams.put(&quot;out_trade_no&quot;, payOrderId + &quot;&quot;);//商户订单号,自己的订单ID</span><br><span class="line">            packageParams.put(&quot;total_fee&quot;, 100 + &quot;&quot;);//支付金额，这边需要转成字符串类型，否则后面的签名会失败</span><br><span class="line">            packageParams.put(&quot;spbill_create_ip&quot;, spbill_create_ip);</span><br><span class="line">            packageParams.put(&quot;notify_url&quot;, WechatConfig.notify_url);//支付成功后的回调地址</span><br><span class="line">            packageParams.put(&quot;trade_type&quot;, WechatConfig.TRADETYPE);//支付方式</span><br><span class="line">            packageParams.put(&quot;openid&quot;, openId + &quot;&quot;);//用户的openID，自己获取</span><br><span class="line"></span><br><span class="line">            String prestr = PayUtil.createLinkString(packageParams); // 把数组所有元素，按照“参数=参数值”的模式用“&amp;”字符拼接成字符串</span><br><span class="line"></span><br><span class="line">            //MD5运算生成签名，这里是第一次签名，用于调用统一下单接口</span><br><span class="line">            String mysign = PayUtil.sign(prestr, WechatConfig.key, &quot;utf-8&quot;).toUpperCase();</span><br><span class="line"></span><br><span class="line">            //拼接统一下单接口使用的xml数据，要将上一步生成的签名一起拼接进去</span><br><span class="line">            String xml = &quot;&lt;xml&gt;&quot; + &quot;&lt;appid&gt;&quot; + WechatConfig.appid + &quot;&lt;/appid&gt;&quot;</span><br><span class="line">                    + &quot;&lt;body&gt;&lt;![CDATA[&quot; + body + &quot;]]&gt;&lt;/body&gt;&quot;</span><br><span class="line">                    + &quot;&lt;mch_id&gt;&quot; + WechatConfig.mch_id + &quot;&lt;/mch_id&gt;&quot;</span><br><span class="line">                    + &quot;&lt;nonce_str&gt;&quot; + nonce_str + &quot;&lt;/nonce_str&gt;&quot;</span><br><span class="line">                    + &quot;&lt;notify_url&gt;&quot; + WechatConfig.notify_url + &quot;&lt;/notify_url&gt;&quot;</span><br><span class="line">                    + &quot;&lt;openid&gt;&quot; + openid + &quot;&lt;/openid&gt;&quot;</span><br><span class="line">                    + &quot;&lt;out_trade_no&gt;&quot; + payOrderId + &quot;&lt;/out_trade_no&gt;&quot;</span><br><span class="line">                    + &quot;&lt;spbill_create_ip&gt;&quot; + spbill_create_ip + &quot;&lt;/spbill_create_ip&gt;&quot;</span><br><span class="line">                    + &quot;&lt;total_fee&gt;&quot; + 100 + &quot;&lt;/total_fee&gt;&quot;//支付的金额，单位：分</span><br><span class="line">                    + &quot;&lt;trade_type&gt;&quot; + WechatConfig.TRADETYPE + &quot;&lt;/trade_type&gt;&quot;</span><br><span class="line">                    + &quot;&lt;sign&gt;&quot; + mysign + &quot;&lt;/sign&gt;&quot;</span><br><span class="line">                    + &quot;&lt;/xml&gt;&quot;;</span><br><span class="line"></span><br><span class="line">            //调用统一下单接口，并接受返回的结果</span><br><span class="line">            String result = PayUtil.httpRequest(WechatConfig.pay_url, &quot;POST&quot;, xml);</span><br><span class="line"></span><br><span class="line">            // 将解析结果存储在HashMap中</span><br><span class="line">            Map map = PayUtil.doXMLParse(result);</span><br><span class="line"></span><br><span class="line">            String return_code = (String) map.get(&quot;return_code&quot;);//返回状态码</span><br><span class="line">            String result_code = (String) map.get(&quot;result_code&quot;);//返回状态码</span><br><span class="line"></span><br><span class="line">            Map&lt;String, Object&gt; response = new HashMap&lt;String, Object&gt;();//返回给小程序端需要的参数</span><br><span class="line">            if (return_code == &quot;SUCCESS&quot; &amp;&amp; return_code.equals(result_code)) &#123;</span><br><span class="line">                String prepay_id = (String) map.get(&quot;prepay_id&quot;);//返回的预付单信息</span><br><span class="line">                response.put(&quot;nonceStr&quot;, nonce_str);</span><br><span class="line">                response.put(&quot;package&quot;, &quot;prepay_id=&quot; + prepay_id);</span><br><span class="line">                Long timeStamp = System.currentTimeMillis() / 1000;</span><br><span class="line">                response.put(&quot;timeStamp&quot;, timeStamp + &quot;&quot;);//这边要将返回的时间戳转化成字符串，不然小程序端调用wx.requestPayment方法会报签名错误</span><br><span class="line">                //拼接签名需要的参数</span><br><span class="line">                String stringSignTemp = &quot;appId=&quot; + WechatConfig.appid + &quot;&amp;nonceStr=&quot; + nonce_str + &quot;&amp;package=prepay_id=&quot; + prepay_id + &quot;&amp;signType=MD5&amp;timeStamp=&quot; + timeStamp;</span><br><span class="line">                //再次签名，这个签名用于小程序端调用wx.requesetPayment方法</span><br><span class="line">                String paySign = PayUtil.sign(stringSignTemp, WechatConfig.key, &quot;utf-8&quot;).toUpperCase();</span><br><span class="line"></span><br><span class="line">                response.put(&quot;paySign&quot;, paySign);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            response.put(&quot;appid&quot;, WechatConfig.appid);</span><br><span class="line"></span><br><span class="line">            return Response.succ(response);</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //这里是支付回调接口，微信支付成功后会自动调用</span><br><span class="line">    @RequestMapping(value = &quot;/wxNotify&quot;, method = RequestMethod.POST)</span><br><span class="line">    public void wxNotify(HttpServletRequest request, HttpServletResponse response) throws Exception &#123;</span><br><span class="line">        BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));</span><br><span class="line">        String line = null;</span><br><span class="line">        StringBuilder sb = new StringBuilder();</span><br><span class="line">        while ((line = br.readLine()) != null) &#123;</span><br><span class="line">            sb.append(line);</span><br><span class="line">        &#125;</span><br><span class="line">        br.close();</span><br><span class="line">        //sb为微信返回的xml</span><br><span class="line">        String notityXml = sb.toString();</span><br><span class="line">        String resXml = &quot;&quot;;</span><br><span class="line"></span><br><span class="line">        Map map = PayUtil.doXMLParse(notityXml);</span><br><span class="line"></span><br><span class="line">        String returnCode = (String) map.get(&quot;return_code&quot;);</span><br><span class="line">        if (&quot;SUCCESS&quot;.equals(returnCode)) &#123;</span><br><span class="line">            //验证签名是否正确</span><br><span class="line">            Map&lt;String, String&gt; validParams = PayUtil.paraFilter(map);  //回调验签时需要去除sign和空值参数</span><br><span class="line">            String prestr = PayUtil.createLinkString(validParams); </span><br><span class="line">            //根据微信官网的介绍，此处不仅对回调的参数进行验签，还需要对返回的金额与系统订单的金额进行比对等</span><br><span class="line">            if (PayUtil.verify(prestr, (String) map.get(&quot;sign&quot;), WechatConfig.key, &quot;utf-8&quot;)) &#123;</span><br><span class="line">                /**此处添加自己的业务逻辑代码start**/</span><br><span class="line">                </span><br><span class="line">                //注意要判断微信支付重复回调，支付成功后微信会重复的进行回调</span><br><span class="line">                </span><br><span class="line">                /**此处添加自己的业务逻辑代码end**/</span><br><span class="line">                //通知微信服务器已经支付成功</span><br><span class="line">                resXml = &quot;&lt;xml&gt;&quot; + &quot;&lt;return_code&gt;&lt;![CDATA[SUCCESS]]&gt;&lt;/return_code&gt;&quot;</span><br><span class="line">                        + &quot;&lt;return_msg&gt;&lt;![CDATA[OK]]&gt;&lt;/return_msg&gt;&quot; + &quot;&lt;/xml&gt; &quot;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            resXml = &quot;&lt;xml&gt;&quot; + &quot;&lt;return_code&gt;&lt;![CDATA[FAIL]]&gt;&lt;/return_code&gt;&quot;</span><br><span class="line">                    + &quot;&lt;return_msg&gt;&lt;![CDATA[报文为空]]&gt;&lt;/return_msg&gt;&quot; + &quot;&lt;/xml&gt; &quot;;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        BufferedOutputStream out = new BufferedOutputStream(</span><br><span class="line">                response.getOutputStream());</span><br><span class="line">        out.write(resXml.getBytes());</span><br><span class="line">        out.flush();</span><br><span class="line">        out.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //获取随机字符串</span><br><span class="line">    private String getRandomStringByLength(int length) &#123;</span><br><span class="line">        String base = &quot;abcdefghijklmnopqrstuvwxyz0123456789&quot;;</span><br><span class="line">        Random random = new Random();</span><br><span class="line">        StringBuffer sb = new StringBuffer();</span><br><span class="line">        for (int i = 0; i &lt; length; i++) &#123;</span><br><span class="line">            int number = random.nextInt(base.length());</span><br><span class="line">            sb.append(base.charAt(number));</span><br><span class="line">        &#125;</span><br><span class="line">        return sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //获取IP</span><br><span class="line">    private String getIpAddr(HttpServletRequest request) &#123;</span><br><span class="line">        String ip = request.getHeader(&quot;X-Forwarded-For&quot;);</span><br><span class="line">        if (StringUtils.isNotEmpty(ip) &amp;&amp; !&quot;unKnown&quot;.equalsIgnoreCase(ip)) &#123;</span><br><span class="line">            //多次反向代理后会有多个ip值，第一个ip才是真实ip</span><br><span class="line">            int index = ip.indexOf(&quot;,&quot;);</span><br><span class="line">            if (index != -1) &#123;</span><br><span class="line">                return ip.substring(0, index);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                return ip;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ip = request.getHeader(&quot;X-Real-IP&quot;);</span><br><span class="line">        if (StringUtils.isNotEmpty(ip) &amp;&amp; !&quot;unKnown&quot;.equalsIgnoreCase(ip)) &#123;</span><br><span class="line">            return ip;</span><br><span class="line">        &#125;</span><br><span class="line">        return request.getRemoteAddr();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h2><ol>
+<li>notify_url规则<ul>
+<li>上面的notify_url是微信支付成功时自动调用的回调方法所以一定要是能够直接访问的 </li>
+<li>notify_url必须是直接请求的 方式是POST 不能有参数不能有访问控制 详见微信文档</li>
+<li>这里的回调由于不保证成功所以微信服务器可能存在多次重复调用需要在业务逻辑中判断</li>
+</ul>
+</li>
+<li>这里的参数排序、xml编码等不符合规范都可能出错 这里罗列一种问题</li>
+</ol>
+<h3 id="签名错误"><a href="#签名错误" class="headerlink" title="签名错误"></a>签名错误</h3><ol>
+<li>可能是secret和密钥混淆导致参数错误上传</li>
+<li>可能body参数含有中文字符 或者编码格式有误</li>
+</ol>
+<h1 id="支付回调"><a href="#支付回调" class="headerlink" title="支付回调"></a>支付回调</h1><h1 id="支付退款"><a href="#支付退款" class="headerlink" title="支付退款"></a>支付退款</h1><h2 id="退款说明"><a href="#退款说明" class="headerlink" title="退款说明"></a>退款说明</h2><ol>
+<li>退款文档地址→<a href="https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_4" target="_blank" rel="noopener">申请退款</a></li>
+<li>退款接口 <code>https://api.mch.weixin.qq.com/secapi/pay/refund</code></li>
+<li>退款需要双向证书，上面退款文档地址内有相应的说明</li>
+<li>退款实现逻辑与付款的不同之处<ol>
+<li>退款时除请求地址不同外 还需要携带证书参数</li>
+</ol>
+</li>
+</ol>
+<h2 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h2><p>请注意，支付的controller部分的xml组成，参数组成都是可重用的，这里需要在util去新增带证书请求的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">payUtil添加方法</span><br><span class="line"></span><br><span class="line">public static String doRefund(String mchId, String url, String data) throws Exception &#123;</span><br><span class="line">        /**</span><br><span class="line">         * 注意PKCS12证书 是从微信商户平台-》账户设置-》 API安全 中下载的</span><br><span class="line">         */</span><br><span class="line">        KeyStore keyStore = KeyStore.getInstance(&quot;PKCS12&quot;);</span><br><span class="line">        //这里自行实现我是使用数据库配置将证书上传到了服务器可以使用 FileInputStream读取本地文件</span><br><span class="line"></span><br><span class="line">        Resource resource = new ClassPathResource(&quot;static/apiclient_cert.p12&quot;);</span><br><span class="line">        File sourceFile =  resource.getFile();</span><br><span class="line"></span><br><span class="line">//        ClassPathResource classPathResource = new ClassPathResource(&quot;/static/apiclient_cert.p12&quot;);</span><br><span class="line">        FileInputStream inputStream = new FileInputStream(String.valueOf(sourceFile));</span><br><span class="line">        try &#123;</span><br><span class="line">            //这里写密码..默认是你的MCHID</span><br><span class="line">            keyStore.load(inputStream, mchId.toCharArray());</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">            inputStream.close();</span><br><span class="line">        &#125;</span><br><span class="line">        SSLContext sslcontext = SSLContexts.custom()</span><br><span class="line">                //这里也是写密码的</span><br><span class="line">                .loadKeyMaterial(keyStore, mchId.toCharArray())</span><br><span class="line">                .build();</span><br><span class="line">        SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(</span><br><span class="line">                sslcontext,</span><br><span class="line">                SSLConnectionSocketFactory.getDefaultHostnameVerifier());</span><br><span class="line">        CloseableHttpClient httpclient = HttpClients.custom()</span><br><span class="line">                .setSSLSocketFactory(sslsf)</span><br><span class="line">                .build();</span><br><span class="line">        try &#123;</span><br><span class="line">            HttpPost httpost = new HttpPost(url);</span><br><span class="line">            httpost.setEntity(new StringEntity(data, &quot;UTF-8&quot;));</span><br><span class="line">            CloseableHttpResponse response = httpclient.execute(httpost);</span><br><span class="line">            try &#123;</span><br><span class="line">                HttpEntity entity = response.getEntity();</span><br><span class="line">                //接受到返回信息</span><br><span class="line">                String jsonStr = EntityUtils.toString(response.getEntity(), &quot;UTF-8&quot;);</span><br><span class="line">                EntityUtils.consume(entity);</span><br><span class="line">                return jsonStr;</span><br><span class="line">            &#125; finally &#123;</span><br><span class="line">                response.close();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">            httpclient.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="注意点-1"><a href="#注意点-1" class="headerlink" title="注意点"></a>注意点</h2><h3 id="签名错误-1"><a href="#签名错误-1" class="headerlink" title="签名错误"></a>签名错误</h3><ol>
+<li>这里的签名错误同样可能是参数没用按照ASCII码排序导致的 可以通过官方的测试工具调整判断是否满足条件→<a href="https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=20_1" target="_blank" rel="noopener">验证格式</a></li>
+<li>这里的回调参数需要网址形式 ip好像不能通过</li>
+</ol>
+<h1 id="余额提现"><a href="#余额提现" class="headerlink" title="余额提现"></a>余额提现</h1><h2 id="end"><a href="#end" class="headerlink" title="end"></a>end</h2><p>还有些功能没有总结 后期补充</p>
+
+      
+    </div>
+    
+    
+    
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+	  
+	</div>
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/微信支付/" rel="tag"><i class="fa fa-tag"></i> 微信支付</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/29/linux部署项目二三事/" rel="next" title="linux部署项目及基础环境配置">
+                <i class="fa fa-chevron-left"></i> linux部署项目及基础环境配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/12/memcached入门与应用/" rel="prev" title="memcached入门与应用">
+                memcached入门与应用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">LemonQi</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/qylemon" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="xxxxxx" target="_blank" title="Wechat">
+                      
+                        <i class="fa fa-fw fa-wechat"></i>Wechat</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin=1643994375&site=qq&menu=yes" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1643994375@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+		  
+          
+
+        </div>
+		
+      </section>
+	  
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#微信支付"><span class="nav-number">1.</span> <span class="nav-text">微信支付</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">1.2.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意点"><span class="nav-number">1.3.</span> <span class="nav-text">注意点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#签名错误"><span class="nav-number">1.3.1.</span> <span class="nav-text">签名错误</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#支付回调"><span class="nav-number">2.</span> <span class="nav-text">支付回调</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#支付退款"><span class="nav-number">3.</span> <span class="nav-text">支付退款</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#退款说明"><span class="nav-number">3.1.</span> <span class="nav-text">退款说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现-1"><span class="nav-number">3.2.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意点-1"><span class="nav-number">3.3.</span> <span class="nav-text">注意点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#签名错误-1"><span class="nav-number">3.3.1.</span> <span class="nav-text">签名错误</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#余额提现"><span class="nav-number">4.</span> <span class="nav-text">余额提现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#end"><span class="nav-number">4.1.</span> <span class="nav-text">end</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+	 <br>
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="300" height="370" src="//music.163.com/outchain/player?type=0&id=2667540670&auto=0&height=430"></iframe>
+    </div>
+	</aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LemonQi</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'ulSCSaOYmb6X7PUw6AWRu5qJ-gzGzoHsz',
+        appKey: 'jtwgy4TV5zf8Shf3eXsl9UIj',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
