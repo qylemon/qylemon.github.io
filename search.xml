@@ -14,6 +14,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[ab测试的记录]]></title>
+    <url>%2F2020%2F04%2F17%2Fab%E6%B5%8B%E8%AF%95%2F</url>
+    <content type="text"><![CDATA[简介ab是apachebench命令的缩写 ，ab是apache自带的压力测试工具。ab非常实用，它不仅可以对apache服务器进行网站访问压力测试，也可以对或其它类型的服务器进行压力测试。比如nginx、tomcat、IIS等 原理ab命令会创建多个并发访问线程，模拟多个访问者同时对某一URL地址进行访问。它的测试目标是基于URL的，因此，它既可以用来测试apache的负载压力，也可以测试nginx、lighthttp、tomcat、IIS等其它Web服务器的压力。 ab命令对发出负载的计算机要求很低，它既不会占用很高CPU，也不会占用很多内存。但却会给目标服务器造成巨大的负载，其原理类似CC攻击。自己测试使用也需要注意，否则一次上太多的负载。可能造成目标服务器资源耗完，严重时甚至导致死机 安装及启动 linux yum -y install httpd-tools #安装命令 Windows打开apacheBench官网 选择相应版本下载，下载后解压得到一个“Apache[版本号]”的目录，打开它能够看到这样一个页面进入bin目录下打开命令行，即可使用ab测试 使用方式及参数常用命令 ab -n xxx -c http://{host}:{port}/xxx 命令名称 说明 -n 请求个数 -c 并发数 -t 最大时间(s) -v 设置显示信息的详细程度(4,3,2) -V 显示版本 -help 参数说明 end]]></content>
+      <categories>
+        <category>测试</category>
+        <category>测试工具</category>
+      </categories>
+      <tags>
+        <tag>ab测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[我的世界部署服务端]]></title>
     <url>%2F2020%2F03%2F22%2F%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%83%A8%E7%BD%B2%2F</url>
     <content type="text"><![CDATA[帮朋友搭建了一个服务端 记录下搭建过程 准备工作在官网下载服务端文件下载地址下载后会得到一个jar包 将文件上传到服务器上 这里需要注意的是你的机器上需要有Java环境 搭建过程下载好了服务端的 .jar 文件之后，你就需要先运行一下，它会生成一些文件，包括一个 eula.txt 许可文件。第一次运行的时候，它会返回一个错误并退出。这是正常的。使用下面的命令运行它： java -Xms2048M -Xmx3472M -jar minecraft_server.1.12.2.jar nogui -Xms2048M 是你的服务端能使用的最小的内存，-Xmx3472M 是最大的内存。调整基于你服务器的硬件资源。如果你服务器上有 4GB 内存，并且不用服务器来干其他事情的话可以就这样留着不动。 在这条命令结束并返回一个错误之后，将会生成一个新的 eula.txt 文件。你需要同意那个文件里的协议。将eula修改为true状态 再次运行 java -Xms2048M -Xmx3472M -jar minecraft_server.1.12.2.jar nogui 就能够启动了 注意事项这时虽然正常启动了 但我们仍然不能够正常使用 我们需要进行相应的配置，打开根目录下的server.properties文件 修改ip port等相应的数据 重新运行 这个时候就能够正常连接了 这里请注意 此时的配置仅仅针对正版用户，非正版用户需要关闭正版验证onlinemode:false 此时重启服务 完美运行 end]]></content>
