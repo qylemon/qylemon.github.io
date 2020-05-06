@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[关于uni-app的使用]]></title>
+    <url>%2F2020%2F05%2F06%2Funi-app%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[五一小长假了解了一下uni-app框架，并且通过uni-app重构了自己学习微信小程序时的项目，下面就简单记录一下过程。 是什么uni-app是dcloud公司发行的使用Vue语言开发跨平台应用的前端框架 优势 其好处在于一码多用适用于多平台；如各家的小程序，app等 降低学习、使用成本只需要Vue基础即可完成跨平台开发 搭建项目搭建uni-app框架 主要分为三个步骤 安装 vue-cli npm install -g @vue/cli //全局安装 创建项目 vue create -p dcloudio/uni-preset-vue projectName 这里创建项目过程中会向搭建vue项目一样选择 这里要选择的是项目模板 启动项目 npm run dev:平台 //这里可以在项目的package.json中查看 与小程序的异同点基本与小程序一致，不同的则是项目结构和相应语法，uni-app的结构则是标准的vue结构，而小程序则是js、css、html文件分开，wx：系列语法也换回到v： 其他感觉差异性不太大。 打包项目最后说说打包项目的过程，这里只说一下打包安卓的流程，离线打包十分麻烦，大致是需要先将文件打包出原生文件，然后在通过AS打包，这里说一下官方的云打包的方式，可以通过自有证书打包，或者官方的，之前有在flutter中记录生成证书的记录，所以我使用的是自有证书，同那个正确的别名、密钥就可以正式打包了；打包后会进入生成队列，打包完全完成后会通过hb终端返回临时下载链接，然后就打包完成了。 注意事项这里打包可能存在sdk和ide版本不一致的问题，如下图这种状况如何避免呢，我们可以下载对应的sdk来规避，更加暴力的方式是忽略检测，方式如下123456manifest.json&quot;app-plus&quot;: &#123; &quot;compatible&quot;: &#123; &quot;ignoreVersion&quot;: true //true表示忽略版本检查提示框，HBuilderX1.9.0及以上版本支持 &#125; end]]></content>
+      <categories>
+        <category>uni-app</category>
+      </categories>
+      <tags>
+        <tag>移动端</tag>
+        <tag>小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[关于及时抽奖的实现]]></title>
+    <url>%2F2020%2F04%2F30%2F%E5%8F%8A%E6%97%B6%E6%8A%BD%E5%A5%96%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[关于一次及时抽奖的记录，这次的需求是时间规定、奖励规定以及不限制抽奖人数。 提要抽奖有多种实现方式 那么最常见的就是转盘了，通过扇区来决定奖项 此时奖品的概率和公平性就都体现了，但是在没有人数和概率规定的情况下显然不能够提现，这是想到了通过时间间隔来均分奖品，那么就通过时间和参与人虚拟了一个中奖概率同时体现了公平性，思路有了，如何实现呢？百度一下我就知道 下面记录一下看了之后的实现。 重点描述该抽奖主要是提现奖品的公平性和奖品的均匀分布 不会出现开始即抽完 后续无奖品 或 奖品有剩余的可能性。 实现如下12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758591.数据表## 抽奖表create table draw( id int not null auto_increment comment &apos;id&apos;, ... ... begin_time datetime comment &apos;抽奖开始时间&apos;, end_time datetime comment &apos;抽奖结束时间&apos;, primary key (id) )## 奖品表create table prize( id int not null auto_increment comment &apos;id&apos;, name varchar(500) comment &apos;奖品名称&apos;, amount int comment &apos;奖品数量&apos;, balance int comment &apos;剩余数量&apos;, last_update_time datetime default CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP comment &apos;最后中奖时间&apos;, primary key (id) )## 中奖信息表create table record( id int not null auto_increment comment &apos;id&apos;, prize_id int comment &apos;奖品id&apos;, release_time datetime default CURRENT_TIMESTAMP comment &apos;中奖时间&apos;, primary key (id) )2.代码实现public static void getPrize()&#123; //1. 首先获取当前抽奖的所有奖品是否还有剩余 if（getBalanceList == 0）&#123; return; &#125;else&#123; // 2. 随机一种用户可能抽中的奖品 price = Random(...); if(price.getBalance &lt;=0)&#123; return; &#125; long beginTime = getBegin_time().getTime(); long endTime = getEnd_time().getTime(); long now = System.currentTimeMillis(); Integer currentAmount = getamount(); // 总奖品数 Integer currentBalance = getBalance(); // 总剩余数 long dataTime = (endTime - beginTime) / currentAmount; // 时间单位 Random rand = new Random(lastTime); long releaseTime = beginTime + (currentAmount - currentBalance) * dataTime + Math.abs(rand.nextLong()) % dataTime; if(now&lt;releaseTime)&#123; // 中奖 &#125;else&#123; return; &#125; &#125;&#125; end]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>抽奖</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[SpringBoot之定时任务]]></title>
     <url>%2F2020%2F04%2F17%2FSpringBoot%E4%B9%8B%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%2F</url>
     <content type="text"><![CDATA[通常我们业务上定时发送邮件，订单超时等操作需要使用到任务调度，市面上也有许多实现方式，比如：redis的TTL，rabbitMQ的死信+TTL，Quartz等，处于业务大小，自带整合等最终选择了Quartz 下面记录自己的整合和使用 简介Quartz 是一个完全由 Java 编写的开源作业调度框架，为在 Java 应用程序中进行作业调度提供了简单却强大的机制。可以与 J2EE 与 J2SE 应用程序相结合也可以单独使用。允许程序开发人员根据时间的间隔来调度作业。实现了作业和触发器的多对多的关系，还能把多个作业与不同的触发器关联。 代码实现导入pom包SpringBoot2.x整合了quartz 导入包即可使用1234&lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-quartz&lt;/artifactId&gt;&lt;/dependency&gt; 编写任务内容123456public class QuartzJob extends QuartzJobBean &#123; @Override protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException &#123; // 任务内容 &#125;&#125; 任务执行类12345678910111213141516171819202122@Configurationpublic class MyScheduler &#123; @Bean(name = &quot;jobDetail&quot;) public JobDetail jobDetail()&#123; JobDetail jobDetail = JobBuilder.newJob(HelloWorld.class) // 定义Job类为HelloWorld类 也就是任务所在类 .withIdentity(&quot;eclipse1&quot;) // 定义name/group (&quot;&quot;,&quot;&quot;) .usingJobData(&quot;key&quot;,&quot;value&quot;).storeDurably() // 定义属性 .build(); return jobDetail; &#125; @Bean(name = &quot;trigger&quot;) public CronTriggerFactoryBean simpleJobTrigger1()&#123; CronTriggerFactoryBean trigger = new CronTriggerFactoryBean(); trigger.setJobDetail(jobDetail()); // cron表达式，每天0点执行一次 trigger.setCronExpression(&quot;0 0 0 * * ?&quot;); return trigger; &#125;&#125; 这时运行项目就能够正常使用定时任务了，测试可以修改corn表达式的时间 end]]></content>
