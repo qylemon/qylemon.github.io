@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="LemonQi">
 <meta property="og:description" content="添加maven依赖&amp;lt;dependency&amp;gt;     &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;     &amp;lt;artifactId&amp;gt;spring-boot-starter-mail&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-13T09:19:23.770Z">
+<meta property="og:updated_time" content="2020-06-11T02:18:45.391Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot使用JavaMail发送SMTP遇到的坑">
 <meta name="twitter:description" content="添加maven依赖&amp;lt;dependency&amp;gt;     &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;     &amp;lt;artifactId&amp;gt;spring-boot-starter-mail&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;">
@@ -398,8 +398,11 @@ spring.mail.username=xxxxxxx@163.com
 //此处password是校验码不是邮箱密码可自行百度
 spring.mail.password=xxxxxxxx
 spring.mail.properties.mail.smtp.starttls.enable=true
+spring.mail.properties.mail.smtp.starttls.required=true
+
 spring.mail.properties.mail.smtp.port=25 //端口号
 spring.mail.default-encoding=UTF-8
+spring.mail.properties.mail.smtp.socketFactory.fallback = false
 </code></pre><h2 id="添加测试方法"><a href="#添加测试方法" class="headerlink" title="添加测试方法"></a>添加测试方法</h2><pre><code>@Autowired
 JavaMailSender mailSender;   //自动注入邮件配置
 
@@ -430,6 +433,7 @@ message.setCc //抄送人
 </code></pre><h2 id="ssl加密发送邮件"><a href="#ssl加密发送邮件" class="headerlink" title="ssl加密发送邮件"></a>ssl加密发送邮件</h2><pre><code>修改properties配置
 //spring.mail.properties.mail.smtp.port=25
 spring.mail.properties.mail.smtp.port=465
+spring.mail.properties.mail.smtp.socketFactory.port = 465
 添加properties配置:
 #SSL证书Socket工厂
 spring.mail.properties.mail.smtp.socketFactory.class=javax.net.ssl.SSLSocketFactory
@@ -586,7 +590,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -597,7 +601,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -608,7 +612,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
