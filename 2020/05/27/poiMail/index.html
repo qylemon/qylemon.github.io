@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="实现思路之前已经记录过发送简易JavaMail和poi导出excel数据了 那么只需要将两步结合即可 实现如下 因为我们之前是直接outputStream导出的 这里我们改导出方式为ByteArrayOutput 123ByteArrayOutputStream baos = new ByteArrayOutputStream();// wb.write(output);wb.write(bao">
+<meta name="description" content="实现思路之前已经记录过发送简易JavaMail和poi导出excel数据了 那么只需要将两步结合即可">
 <meta name="keywords" content="SpringBoot,POI,Mail">
 <meta property="og:type" content="article">
 <meta property="og:title" content="poi导出excel并作为附件发送JavaMail">
 <meta property="og:url" content="http://yoursite.com/2020/05/27/poiMail/index.html">
 <meta property="og:site_name" content="LemonQi">
-<meta property="og:description" content="实现思路之前已经记录过发送简易JavaMail和poi导出excel数据了 那么只需要将两步结合即可 实现如下 因为我们之前是直接outputStream导出的 这里我们改导出方式为ByteArrayOutput 123ByteArrayOutputStream baos = new ByteArrayOutputStream();// wb.write(output);wb.write(bao">
+<meta property="og:description" content="实现思路之前已经记录过发送简易JavaMail和poi导出excel数据了 那么只需要将两步结合即可">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-06-11T06:15:58.220Z">
+<meta property="og:updated_time" content="2020-06-11T06:23:32.662Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="poi导出excel并作为附件发送JavaMail">
-<meta name="twitter:description" content="实现思路之前已经记录过发送简易JavaMail和poi导出excel数据了 那么只需要将两步结合即可 实现如下 因为我们之前是直接outputStream导出的 这里我们改导出方式为ByteArrayOutput 123ByteArrayOutputStream baos = new ByteArrayOutputStream();// wb.write(output);wb.write(bao">
+<meta name="twitter:description" content="实现思路之前已经记录过发送简易JavaMail和poi导出excel数据了 那么只需要将两步结合即可">
 
 
 
@@ -409,8 +409,7 @@
       
 
       
-        <a id="more"></a>
-<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><p>之前已经记录过发送简易JavaMail和poi导出excel数据了 那么只需要将两步结合即可</p>
+        <h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><p>之前已经记录过发送简易JavaMail和poi导出excel数据了 那么只需要将两步结合即可<br><a id="more"></a></p>
 <h2 id="实现如下"><a href="#实现如下" class="headerlink" title="实现如下"></a>实现如下</h2><ol>
 <li><p>因为我们之前是直接outputStream导出的 这里我们改导出方式为ByteArrayOutput</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ByteArrayOutputStream baos = new ByteArrayOutputStream();</span><br><span class="line">// wb.write(output);</span><br><span class="line">wb.write(baos);</span><br></pre></td></tr></table></figure>
