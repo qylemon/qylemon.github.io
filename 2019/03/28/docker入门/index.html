@@ -88,7 +88,7 @@
 <meta property="og:description" content="简介docker容器采用c/s架构,使用镜像来创建容器,使用远程api来管理容器&amp;gt;&amp;gt;&amp;gt;docker简介">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/439845acfee8867089ee2fa9d41e4c3a16cdc082cea4fed7a952501b057cc690306ec07d36b80d546861286e40ef58a9?pictype=scale&from=30113&version=3.3.3.3&uin=1643994375&fname=16178336d76fb404.png&size=750">
-<meta property="og:updated_time" content="2019-06-29T09:35:25.258Z">
+<meta property="og:updated_time" content="2020-07-14T10:36:33.860Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker入门">
 <meta name="twitter:description" content="简介docker容器采用c/s架构,使用镜像来创建容器,使用远程api来管理容器&amp;gt;&amp;gt;&amp;gt;docker简介">
@@ -445,7 +445,20 @@ EXPOSE 3000
 <p>docker build -t imagename . （在dockerfile所在目录运行创建镜像 .号是指定 dockerfile 在当前目录中）<br><br>docker run -p 4000:3000 imagename (映射到宿主机)</p>
 </blockquote>
 <p>*dockerfile取于<a href="https://www.jianshu.com/p/0bbbd5c7d020" target="_blank" rel="noopener">使用 Dockerfile 自定义 Docker 镜像</a></p>
-
+<h2 id="关于一些奇奇怪怪的问题"><a href="#关于一些奇奇怪怪的问题" class="headerlink" title="关于一些奇奇怪怪的问题"></a>关于一些奇奇怪怪的问题</h2><p>因为时win10 Home版本 所以导致又是可能这个“码头工人”偶尔也会皮一下 记录一下两个使用中出现的环境问题</p>
+<ol>
+<li><p>伪装失效 突然注册表又回到了家庭版 这是我们打开command的管理员模式 输入以下命令即可</p>
+<blockquote>
+<p>REG ADD “HKEY_LOCAL_MACHINE\software\Microsoft\Windows NT\CurrentVersion” /v EditionId /T REG_EXPAND_SZ /d Professional /F</p>
+</blockquote>
+</li>
+<li><p>已经开启虚拟化（Hyper-V） 启动时仍然提示虚拟化错误</p>
+<blockquote>
+<p>我们通过资源监视器发现虚拟化已启用 这时代表硬性条件已经满足那么我们就需要再去BIOS中对虚拟化进行调整 这里可以尝试如下命令   同样在管理员命令窗口使用→bcdedit /set hypervisorlaunchtype Auto 出现完成的反馈后 重启电脑 这时奇迹就会出现</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="end-1"><a href="#end-1" class="headerlink" title="end"></a>end</h2>
       
     </div>
     
@@ -597,7 +610,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -682,7 +695,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用场景"><span class="nav-number">2.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期"><span class="nav-number">3.</span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">4.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础命令"><span class="nav-number">5.</span> <span class="nav-text">基础命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">6.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#end"><span class="nav-number">7.</span> <span class="nav-text">end</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">8.</span> <span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dockerfile"><span class="nav-number">8.1.</span> <span class="nav-text">dockerfile</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用场景"><span class="nav-number">2.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期"><span class="nav-number">3.</span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">4.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础命令"><span class="nav-number">5.</span> <span class="nav-text">基础命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">6.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#end"><span class="nav-number">7.</span> <span class="nav-text">end</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">8.</span> <span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dockerfile"><span class="nav-number">8.1.</span> <span class="nav-text">dockerfile</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于一些奇奇怪怪的问题"><span class="nav-number">9.</span> <span class="nav-text">关于一些奇奇怪怪的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#end-1"><span class="nav-number">10.</span> <span class="nav-text">end</span></a></li></ol></div>
             
 
           </div>
