@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="微信,">
 
 
 
@@ -79,14 +79,20 @@
 
 
 
-<meta name="keywords" content="LemonQi">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LemonQi">
-<meta property="og:url" content="http://yoursite.com/tags/ab测试/index.html">
+<meta name="description" content="记录下网页端微信实现扫码登录的流程">
+<meta name="keywords" content="微信">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web微信扫码登录">
+<meta property="og:url" content="http://yoursite.com/2020/05/11/微信扫码登录网站/index.html">
 <meta property="og:site_name" content="LemonQi">
+<meta property="og:description" content="记录下网页端微信实现扫码登录的流程">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://qn.cxylt.cn/2018/5/11/QQ%E5%9B%BE%E7%89%8720180510151403.png">
+<meta property="og:updated_time" content="2020-09-25T05:43:45.589Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LemonQi">
+<meta name="twitter:title" content="web微信扫码登录">
+<meta name="twitter:description" content="记录下网页端微信实现扫码登录的流程">
+<meta name="twitter:image" content="http://qn.cxylt.cn/2018/5/11/QQ%E5%9B%BE%E7%89%8720180510151403.png">
 
 
 
@@ -116,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/ab测试/">
+  <link rel="canonical" href="http://yoursite.com/2020/05/11/微信扫码登录网站/">
 
 
 
 
 
-  <title>标签: ab测试 | LemonQi</title>
+  <title>web微信扫码登录 | LemonQi</title>
   
 
 
@@ -144,7 +150,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband">
 		<a href="https://github.com/qylemon/" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 	</div>
@@ -292,52 +298,216 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>ab测试<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/11/微信扫码登录网站/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LemonQi">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LemonQi">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2020/04/17/ab测试/" itemprop="url">
-              
-                <span itemprop="name">ab测试的记录</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">web微信扫码登录</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-04-17T11:03:33+08:00" content="2020-04-17">
-          04-17
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-11T15:06:45+08:00">
+                2020-05-11
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/05/11/微信扫码登录网站/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/11/微信扫码登录网站/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    </div>
+      
 
+      
+        <p>记录下网页端微信实现扫码登录的流程<a id="more"></a></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>首先我们需要到<a href="https://open.weixin.qq.com/" target="_blank" rel="noopener">微信·开放平台</a>的管理中心创建一个网站应用，<img src="http://qn.cxylt.cn/2018/5/11/QQ%E5%9B%BE%E7%89%8720180510151403.png" alt></li>
+<li>完成后我们会得到该网页应用的appid和appsecret</li>
+<li>在文档中我们能够看到网页应用获取用户信息的详细过程→<a href="https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html" target="_blank" rel="noopener">微信官方文档·开放平台</a></li>
+</ol>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">1. 首先获取微信二维码</span><br><span class="line">public String getWechatCode() &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">        String oauthUrl = &quot;https://open.weixin.qq.com/connect/qrconnect?appid=APPID&amp;redirect_uri=REDIRECT_URI&amp;response_type=code&amp;scope=SCOPE&amp;state=STATE#wechat_redirect&quot;;</span><br><span class="line">        String redirect_uri = URLEncoder.encode(callBack, &quot;utf-8&quot;);</span><br><span class="line">        oauthUrl =  oauthUrl.replace(&quot;APPID&quot;,config.appid).replace(&quot;REDIRECT_URI&quot;,config.redirect_uri).replace(&quot;SCOPE&quot;,snsapi_login);	//其中scope的值为固定值</span><br><span class="line">        return msg.success(oauthUrl);</span><br><span class="line">    &#125; catch (UnsupportedEncodingException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; catch (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    return null;</span><br><span class="line">&#125;</span><br><span class="line">2. 成功后微信会将code和state两个参数重定向到redirect_uri页面中 </span><br><span class="line">public String callBackUserInfo(String code, String state) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            //1.通过code获取access_token</span><br><span class="line">            String url = &quot;https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&amp;secret=SECRET&amp;code=CODE&amp;grant_type=authorization_code&quot;;</span><br><span class="line">            url = url.replace(&quot;APPID&quot;,config.appid).replace(&quot;SECRET&quot;,config.appsecret).replace(&quot;CODE&quot;,code);</span><br><span class="line">            String s  = HttpUtils.httpGet(url);</span><br><span class="line">			JsonParser jp = new JsonParser();</span><br><span class="line">            JsonObject jo = jp.parse(s).getAsJsonObject();</span><br><span class="line"></span><br><span class="line">            //2.通过access_token和openid获取用户信息</span><br><span class="line">            String userInfoUrl = &quot;https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&amp;openid=OPENID&quot;;</span><br><span class="line">            userInfoUrl = userInfoUrl.replace(&quot;ACCESS_TOKEN&quot;,jo.get(&quot;access_token&quot;).getAsString()).replace(&quot;OPENID&quot;,jo.get(&quot;openid&quot;).getAsString());</span><br><span class="line"></span><br><span class="line">            String userinfo = HttpUtils.httpGet(userInfoUrl);</span><br><span class="line">            if (userInfoStr == null) &#123;</span><br><span class="line">                return msg.fail(&quot;获取失败&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">            //3.根据uuid查询用户是否存在，如果存在直接登录。如果不存在则自动注册，在登录</span><br><span class="line">            UserInfoModel userInfoByWechat = iUserDao.selectBy(&quot;unionId&quot;, asJsonObject.get(&quot;unionid&quot;).getAsString());</span><br><span class="line">            if (userInfoByWechat != null) &#123;</span><br><span class="line">                return msg.success(userInfoByWechat);</span><br><span class="line">            &#125;</span><br><span class="line">            //4.数据库添加用户信息</span><br><span class="line">            String username = userInfoStr.get(&quot;nickname&quot;).toString();</span><br><span class="line">            String unionid = userInfoStr.get(&quot;unionid&quot;).toString();</span><br><span class="line">			..</span><br><span class="line">            UserInfoBean userInfoBean = new UserInfoBean();</span><br><span class="line">            userInfoBean.setUuid(unionid);</span><br><span class="line">            userInfoBean.setUsername(username);</span><br><span class="line">			..</span><br><span class="line">            int result = iUserDao.insertUser(userInfoBean);</span><br><span class="line">            //5.根据uuid查询新注册的用户信息</span><br><span class="line">            if (result != 1) &#123;</span><br><span class="line">				//fail</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">				//success</span><br><span class="line">			&#125;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        return msg.fail(&quot;&quot;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="注意事项说明"><a href="#注意事项说明" class="headerlink" title="注意事项说明"></a>注意事项说明</h2><ol>
+<li>关于unionId<ol>
+<li>用户在同主体公众号授权时，getuserInfo内应当直接存在unionId属性</li>
+<li>unionId一定要提前获取到，用户在其他同主体下的产品授权登录时则会产生unionId，网上说可能碰到无法获取的情况暂未发现</li>
+<li>小程序通过getUserInfo解码得到unionId时 这里的sessionKey一定要在userinfo前得到，否则则可能出现<code>javax.crypto.BadPaddingException: pad block corrupted</code>问题；</li>
+</ol>
+</li>
+<li>微信扫码获取code时<ol>
+<li>redirect_uri 参数错误 这里可能是因为填写的回调地址错误 回调地址不需要填写详细请求地址，只需要主体域名即可，详细跳转填到项目对应变量内</li>
+<li>该链接无法访问 这可能时问题一所致，也可能时scope不为snsapi_login所致</li>
+</ol>
+</li>
+</ol>
+<h2 id="end"><a href="#end" class="headerlink" title="end"></a>end</h2>
+      
+    </div>
+    
+    
+    
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+	  
+	</div>
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/微信/" rel="tag"><i class="fa fa-tag"></i> 微信</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/05/06/uni-app的使用/" rel="next" title="关于uni-app的使用">
+                <i class="fa fa-chevron-left"></i> 关于uni-app的使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/05/20/RabbitMQ安装与查看/" rel="prev" title="RabbitMQ安装手记">
+                RabbitMQ安装手记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -345,6 +515,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -365,8 +542,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -456,6 +642,22 @@
       </section>
 	  
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">2.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项说明"><span class="nav-number">3.</span> <span class="nav-text">注意事项说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#end"><span class="nav-number">4.</span> <span class="nav-text">end</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -601,6 +803,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
