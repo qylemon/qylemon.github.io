@@ -12,7 +12,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://chenjiabing666.github.io/"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
 
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -82,7 +104,7 @@
 <meta name="keywords" content="LemonQi">
 <meta property="og:type" content="website">
 <meta property="og:title" content="LemonQi">
-<meta property="og:url" content="http://yoursite.com/tags/vue/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/Vue/index.html">
 <meta property="og:site_name" content="LemonQi">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -116,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/vue/">
+  <link rel="canonical" href="http://yoursite.com/tags/Vue/">
 
 
 
 
 
-  <title>标签: vue | LemonQi</title>
+  <title>标签: Vue | LemonQi</title>
   
 
 
@@ -299,7 +321,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>vue<small>标签</small>
+        <h1>Vue<small>标签</small>
         </h1>
       </div>
 
@@ -311,43 +333,17 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2020/03/06/linux对vue环境的安装与使用/" itemprop="url">
+            <a class="post-title-link" href="/2019/03/22/VueAndAxios/" itemprop="url">
               
-                <span itemprop="name">linux部署及基础环境配置(四)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-03-06T23:40:52+08:00" content="2020-03-06">
-          03-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2020/01/09/vue数据处理/" itemprop="url">
-              
-                <span itemprop="name">vue数据处理</span>
+                <span itemprop="name">初探Vue+axios</span>
               
             </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2020-01-09T20:21:51+08:00" content="2020-01-09">
-          01-09
+        <time class="post-time" itemprop="dateCreated" datetime="2019-03-22T21:10:59+08:00" content="2019-03-22">
+          03-22
         </time>
       </div>
 
@@ -987,6 +983,50 @@
     }
 
     // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+d trigger popup window;
     $('.popup-trigger').click(function(e) {
       e.stopPropagation();
       if (isfetched === false) {

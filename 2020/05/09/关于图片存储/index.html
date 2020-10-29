@@ -12,7 +12,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://chenjiabing666.github.io/"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
 
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -79,19 +101,19 @@
 
 
 
-<meta name="description" content="这几天在浏览静态相关的文章，希望能让这边静态上传速度上做优化调整在看到这张图后让我产生了新的想法，如果改为前端传递是否能够更快一步呢  前端or后端？后端之前已经有记录过了效果属于正常状态 这次尝试了前端(小程序)上传记录下详细过程，这里依旧使用七牛云。 图片上传那么在上传前我们需要缕清上传需要用到哪些必须操作 准备工作 小程序上传图片需要使用到两个官方api wx.chooseImage //">
+<meta name="description" content="这几天在浏览静态相关的文章，希望能让这边静态上传速度上做优化调整在看到这张图后让我产生了新的想法，如果改为前端传递是否能够更快一步呢">
 <meta name="keywords" content="静态存储">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于静态资源上传">
 <meta property="og:url" content="http://yoursite.com/2020/05/09/关于图片存储/index.html">
 <meta property="og:site_name" content="LemonQi">
-<meta property="og:description" content="这几天在浏览静态相关的文章，希望能让这边静态上传速度上做优化调整在看到这张图后让我产生了新的想法，如果改为前端传递是否能够更快一步呢  前端or后端？后端之前已经有记录过了效果属于正常状态 这次尝试了前端(小程序)上传记录下详细过程，这里依旧使用七牛云。 图片上传那么在上传前我们需要缕清上传需要用到哪些必须操作 准备工作 小程序上传图片需要使用到两个官方api wx.chooseImage //">
+<meta property="og:description" content="这几天在浏览静态相关的文章，希望能让这边静态上传速度上做优化调整在看到这张图后让我产生了新的想法，如果改为前端传递是否能够更快一步呢">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/1cff2eb9a3c850bc97a101346ba1aba340ecae9f02df0b624fbb66c65b5855ffcbab148581dd8bb77e3acaec47e77489?pictype=scale&from=30013&version=3.3.3.3&uin=1643994375&fname=jingtai.png&size=750">
-<meta property="og:updated_time" content="2020-09-25T05:53:07.170Z">
+<meta property="og:updated_time" content="2020-10-29T06:32:55.493Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于静态资源上传">
-<meta name="twitter:description" content="这几天在浏览静态相关的文章，希望能让这边静态上传速度上做优化调整在看到这张图后让我产生了新的想法，如果改为前端传递是否能够更快一步呢  前端or后端？后端之前已经有记录过了效果属于正常状态 这次尝试了前端(小程序)上传记录下详细过程，这里依旧使用七牛云。 图片上传那么在上传前我们需要缕清上传需要用到哪些必须操作 准备工作 小程序上传图片需要使用到两个官方api wx.chooseImage //">
+<meta name="twitter:description" content="这几天在浏览静态相关的文章，希望能让这边静态上传速度上做优化调整在看到这张图后让我产生了新的想法，如果改为前端传递是否能够更快一步呢">
 <meta name="twitter:image" content="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/1cff2eb9a3c850bc97a101346ba1aba340ecae9f02df0b624fbb66c65b5855ffcbab148581dd8bb77e3acaec47e77489?pictype=scale&from=30013&version=3.3.3.3&uin=1643994375&fname=jingtai.png&size=750">
 
 
@@ -373,6 +395,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  709
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
 
           
 
@@ -389,7 +442,7 @@
       
 
       
-        <p>这几天在浏览静态相关的文章，希望能让这边静态上传速度上做优化调整在看到这张图后让我产生了新的想法，如果改为前端传递是否能够更快一步呢 <img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/1cff2eb9a3c850bc97a101346ba1aba340ecae9f02df0b624fbb66c65b5855ffcbab148581dd8bb77e3acaec47e77489?pictype=scale&amp;from=30013&amp;version=3.3.3.3&amp;uin=1643994375&amp;fname=jingtai.png&amp;size=750" alt></p>
+        <p>这几天在浏览静态相关的文章，希望能让这边静态上传速度上做优化调整在看到这张图后让我产生了新的想法，如果改为前端传递是否能够更快一步呢 <a id="more"></a><br> <img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/1cff2eb9a3c850bc97a101346ba1aba340ecae9f02df0b624fbb66c65b5855ffcbab148581dd8bb77e3acaec47e77489?pictype=scale&amp;from=30013&amp;version=3.3.3.3&amp;uin=1643994375&amp;fname=jingtai.png&amp;size=750" alt></p>
 <h2 id="前端or后端？"><a href="#前端or后端？" class="headerlink" title="前端or后端？"></a>前端or后端？</h2><p>后端之前已经有记录过了效果属于正常状态 这次尝试了前端(小程序)上传记录下详细过程，这里依旧使用七牛云。</p>
 <h2 id="图片上传"><a href="#图片上传" class="headerlink" title="图片上传"></a>图片上传</h2><p>那么在上传前我们需要缕清上传需要用到哪些必须操作</p>
 <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ol>

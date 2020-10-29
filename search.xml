@@ -29,9 +29,9 @@
         <category>MQ</category>
       </categories>
       <tags>
+        <tag>安装与配置</tag>
         <tag>RabbitMQ</tag>
         <tag>消息队列</tag>
-        <tag>安装与配置</tag>
       </tags>
   </entry>
   <entry>
@@ -320,8 +320,8 @@
         <category>flutter</category>
       </categories>
       <tags>
-        <tag>安装与配置</tag>
         <tag>flutter</tag>
+        <tag>安装与配置</tag>
       </tags>
   </entry>
   <entry>
